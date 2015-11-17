@@ -1,0 +1,75 @@
+@charset "gb2312";
+/* CSS Document */
+body { background:#FFF; font-size:16px; -webkit-text-size-adjust:none; font-family:"微软雅黑","Helvetica Neue", Helvetica, STHeiTi, Arial, sans-serif; color:#333;}
+body, ul, ol, li, dl, dt, dd, p, h1, h2, h3, h4, h5, h6, blockquote { margin:0; padding:0; list-style:none; }
+a { text-decoration:none; color:#666; }
+img { border:0; }
+.clear { clear:both; }
+
+/*基本按钮*/
+.btn-grey { border:0;border-radius:3px;-webkit-border-radius:3px;-moz-border-radius:3px;background:#e5e5e5; color:#fff;}
+a.btn-blue{ display:inline-block; height:40px; line-height:40px; background:#0065b5; color:#fff;border-radius:5px; -webkit-border-radius:5px; -moz-border-radius:5px; text-align:center; }
+/* 标题 */
+.title-h{ background:#e5e5e5; color:#0065b5; line-height:36px; font-size:16px; border-bottom:1px solid #0065b5; padding-left:1em;}
+.title-h span{ font-size:12px; color:#ff0101;}
+/* 广告 */
+.ad{ width:100%; overflow:hidden;}
+/* 箭头 */
+
+.arrows-left .icon1 { display:block; border-width:8px 8px 8px 0; border-color:transparent #0065b7 transparent transparent; border-style:solid; position:absolute;left:0; top:-2px; width:0; height:0; }
+.arrows-left .icon2 { display:block; border-width:8px 8px 8px 0; border-color:transparent #fff transparent transparent; border-style:solid; position:absolute; left:3px; top:-8px; width:0; height:0; }
+.arrows-right .icon1 { display:block; border-width:8px 8px 0 8px; border-color:transparent transparent transparent #0065b7; border-style:solid; position:absolute;left:0; top:-2px; width:0; height:0; }
+.arrows-right .icon2 { display:block; border-width:8px 8px 0 8px; border-color:transparent transparent transparent #fff; border-style:solid; position:absolute; right:3px; top:-8px; width:0; height:0; }
+
+/* 标题+导航 */
+.book_title .catalogbox .catalog:after { content:"."; display:block; height:0; clear:both; visibility:hidden; }
+.book_title { height:45px; padding:0 10px; background:#fff; border-bottom:2px solid #0065b5; }
+.return { border-radius:16px; -webkit-border-radius:16px; -moz-border-radius:16px; background:#fff; border:2px solid #0065b5; position:absolute; display:block; width:28px; height:28px; top:7px; left:10px; }
+.book_title .arrows-left { position:absolute;left:8px; top:8px; overflow:hidden; width:8px; height:12px;}
+.book_title h2 { position:absolute; left:84px; right:95px; height:45px; line-height:45px; font-weight:normal; overflow:hidden; color:#3a3b3d; text-align:center; font-size:24px; text-overflow: ellipsis; white-space: nowrap; }
+.book_title .dh_select { position:absolute; display:block; margin-top:9px; border-radius:4px; -webkit-border-radius:4px; -moz-border-radius:4px; border:1px solid #0065b5; right:10px; width:48px; height:24px; line-height:24px; color:#0065b5; text-align:center;  font-size:14px;}
+.book_title .dh_select select { height:27px; line-height:27px; font-size:0.9em; border:1px solid #565755; padding-right:25px; text-align:center; padding-top:4px; border-radius:3px; -webkit-border-radius:3px; -moz-border-radius:3px; width:80px; background:url(../images/2013/select_r.png) no-repeat top right; background-size:25px 25px; }
+.book_title .catalogbox { position:absolute; z-index:10; left:0; top:45px; background:rgba(0,0,0,0.8); line-height:50px; text-align:center; font-size:1.0em; width:100%; }
+.book_title .catalogbox .line { position:absolute; left:10px; top:59px; right:10px; height:0px; border-bottom:1px solid #5e5e60; border-top:1px solid #111; }
+.book_title .catalogbox .catalog { padding:10px; }
+.book_title .catalogbox .catalog a,
+.book_title .catalogbox .catalog a:visited { width:33%; display:block; float:left; color:#ccc; text-align:center; }
+.book_title .catalogbox .catalog .hover { color:#ccc; }
+.book_title .catalogbox .arrow_up { display:block; position:absolute; width:0px; height:0px; border-left:5px solid transparent; border-right:5px solid transparent; border-bottom:5px solid #000; font-size:0px; line-height:0px; opacity:0.8; z-index:3; top:-5px; right:30px; }
+
+
+/*登录*/
+.formlonin{ padding:15px; font-size:100%; line-height:1.6;}
+.formlonin.bor-top{ border-top:1px solid #0065b5}
+.input1,.input11,.input2,.input3{  width:94%; font-size:100%; margin:10px 0; padding:0 3%; height:40px; line-height:40px; font-size:1em; color:#bfbfbf; border:1px solid #c3c3c3;border-radius:5px; -webkit-border-radius:5px; -moz-border-radius:5px; outline:none;-webkit-tap-highlight-color: rgba(0,0,0,0);-webkit-tap-highlight-color: transparent;-moz-outline-style: none;-webkit-appearance:none; }
+.input1:focus{ color:#333;border:1px solid #0065b5; outline:none; }
+.input3{ width:46%;cursor:pointer;}
+.formlonin label{ float:right; font-size:1em; height:45px; line-height:30px; width:35%; text-align:right;}
+.formlonin label a{color:#0065b5; text-decoration:underline;}
+.formlonin label.left{ width:65%; float:left; text-align:left; font-size:12px; color:#333;}
+.formlonin label.left font{ position:relative; top:-2px;}
+.formlonin p{ line-height:30px; color:#717171; font-size:1em;}
+.formlonin p b{ color:#0065b5; font-size:1em; }
+.input2{ cursor:pointer;width:49%; margin:0 0.5%;border:1px solid #0065b5; background:#fff;font-weight:bold; font-size:1.25em;}
+.input11{width:100%; border:none;cursor:pointer;}
+.btn-blue{ background:#0065b5; color:#fff; background-image: -webkit-gradient(linear, left top, left bottom, from( #0065b5 ), to( #0065b5 )); background-image: -webkit-linear-gradient( #0065b5 , #0065b5 ); background-image: -moz-linear-gradient( #0065b5 , #0065b5 ); background-image: -ms-linear-gradient( #0065b5 , #0065b5 );background-image: -o-linear-gradient( #0065b5 , #0065b5 );background-image: linear-gradient( #0065b5 , #0065b5 );}
+.btn-white{ color:#0065b5;background-image: -webkit-gradient(linear, left top, left bottom, from( #ffffff ), to( #ffffff ));background-image: -webkit-linear-gradient( #ffffff , #ffffff );background-image: -moz-linear-gradient( #ffffff , #ffffff ); background-image: -ms-linear-gradient( #ffffff , #ffffff ); background-image: -o-linear-gradient( #ffffff , #ffffff );background-image: linear-gradient( #ffffff , #ffffff ); }
+
+
+/*注册*/
+.formregister{ margin:15px 0; text-align:center;}
+.formregister h1{ font-size:0.937em; text-align:center; line-height:40px;}
+.formregister h2{ width:80%; margin:auto;font-size:0.937em; text-align:center; line-height:26px; color:#0065b5; }
+.formregister a{ width:88%;}
+.formlonin span{ display:block; color:#808080; font-size:0.875em;}
+.formlonin label.w40{ width:45%; height:40px; line-height:40px;}
+.formlonin label.w40 img{ margin-top:11px; margin-right:5px;}
+
+
+span.red{ color:#bb0e0e;}
+/*其他登录-qq*/
+.divqq{ margin-top:10px; color:#666;}
+.btns{ display:inline-block; margin-right:10px;}
+.btns .qq_login {background:url(../images/icon_QQ.png) no-repeat left center; display:block; height: 23px; width: 4em; padding-left:20px;}
+
+

@@ -1,0 +1,14 @@
+<h3>{$detail_chapter.title}</h3>
+<div style="height:10px"></div>
+{$detail_chapter.content}
+<div style="height:30px"></div>
+<script>
+$(function(){
+        $("input[name=nextpage]").val("{$nextpage}");
+    $("input[name=totalPage]").val("2703");
+    $("input[name=articleId]").val("{$bookid}");
+    $("ul li#liprev").html("<a href='{:U('view?bookid='.$bookid.'&index='.$prepage)}'>上一章</a>");
+            $("ul li#linext").html("<a href='{:U('view?bookid='.$bookid.'&index='.$nextpage)}'>下一章</a>");
+     });
+
+</script>

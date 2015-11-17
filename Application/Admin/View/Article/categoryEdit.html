@@ -1,0 +1,47 @@
+<div class="bjui-pageContent">
+    <form action="__SELF__" id="j_custom_form" data-toggle="validate" data-alertmsg="false">
+        <input type="hidden" name="catid" value="{$catid}">
+        <table class="table table-condensed table-hover" width="100%">
+            <tbody>
+                <tr>
+                    <td>
+                        <label class="control-label x85">上级栏目：</label>
+                        <?php echo \Lain\Phpcms\form::select_category('',0 , 'data-toggle="selectpicker" name="info[parentid]"','≡ 作为一级栏目 ≡');?>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="c_catname" class="control-label x85">栏目名称：</label>
+                        <input type="text" id="c_catname" name="info[catname]" value="{$Detail.catname}" data-rule="required" size="15" class="required">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="j_custom_name" class="control-label x85">栏目类型：</label>
+                        <empty name="Detail">
+                        <select data-toggle="selectpicker" name="info[type]">
+                            <option value="0" >内部栏目</option>
+                            <option value="1" >单网页</option>
+                        </select>
+                        <else />
+                        <input type="text" value="<eq name="Detail.type" value="1">单网页<else />内部栏目</eq>" disabled>
+                        </empty>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="c_listorder" class="control-label x85">排序值：</label>
+                        <input type="text" name="info[listorder]" id="c_listorder" value="{$Detail.listorder}" size="15">
+                    </td>
+                </tr>
+                
+            </tbody>
+        </table>
+    </form>
+</div>
+<div class="bjui-pageFooter">
+    <ul>
+        <li><button type="button" class="btn-close" data-icon="close">取消</button></li>
+        <li><button type="submit" class="btn-default" data-icon="save">保存</button></li>
+    </ul>
+</div>

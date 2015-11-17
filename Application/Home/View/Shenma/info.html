@@ -1,0 +1,187 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="gb2312">
+<title>{$Detail.title} - 一起php</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href="/Public/shenma/css/base_201409.css?v=20150805" rel="stylesheet" type="text/css">
+<!-- <link href="/Public/shenma/css/2014-footer.css?v=20150805" rel="stylesheet" type="text/css"> -->
+<link href="/Public/shenma/css/2014-info.css?v=20150805" rel="stylesheet" type="text/css">
+<link href="/Public/shenma/css/bookreviews.css?v=20150805" rel="stylesheet" type="text/css">
+<script src="/Public/shenma/js/jquery.js?v=201412209" type="text/javascript"></script>
+<script src="/Public/shenma/js/common.js?v=201412209" type="text/javascript"></script>
+<script src="/Public/shenma/js/BookEx.js?v=201412209" type="text/javascript"></script>
+<script src="/Public/shenma/js/global.js" type="text/javascript"></script>
+<script src="/Public/shenma/js/xui-2.js?v=201412209"></script>
+<script src="/Public/shenma/js/RNUI.js?v=201412209"></script>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?5a477e1c99330cb03ff8c983438b2ed2";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<style type="text/css">
+#progress {
+    height: 100%;
+    background-color: green;
+    width: 0px
+}
+</style>
+</head>
+<body>
+    <div class="bookinfo">
+        <div class="book_title">
+            <!-- 如果是从阅读页跳转过来 让返回按钮直接指到首页  -->
+            <a href="javascript:history.go(-1)" class="return">
+                <div class="arrows-left">
+                    <span class="icon1"><span class="icon2"></span></span>
+                </div>
+            </a>
+            <h2>{$Detail.title}</h2>
+            <a class="dh_select" href="javascript:Common.toggleTopNav();">导航</a>
+            <div id="topNavBox" class="catalogbox" style="display: none;">
+                <span class="arrow_up"></span>
+                <div class="catalog">
+                    <a href="/">首页</a> <!-- <a href="/usercp.html">个人中心</a> <a href="/Public/shenma/usercp.php?a=bookcase">书架</a> <a href="/Public/shenma/top.php?a=topindex">排行</a> <a href="/Public/shenma/index.php?a=client_download">客户端</a> <a href="/Public/shenma/pay.php?a=zhifubao">充值</a> -->
+                </div>
+                <div class="line"></div>
+            </div>
+        </div>
+        <!-- 公告 -->
+        <!--<div id="marqueeid"><a style="display:block;" href="http://wap.cmread.com/r/p/index.jsp?vt=2&cm=M3680013" target="_blank">和阅读品牌推广专区</a> <a style="display:none;" href="http://t.xs.cn/Public/shenma/activity.php?a=sign_in_offline&type=3" target="_blank">绿色作品处理公告</a> 
+            <script>
+                function showNoticByOrder(){
+                    var index = counter%trandomNum;
+                    $("#marqueeid a").hide();
+                    $("#marqueeid a:eq("+index+")").show();
+                    counter += 1;
+                }
+                $(document).ready(function(){
+                    trandomNum = $("#marqueeid a").length;
+                    if(trandomNum > 1){
+                        counter = 1;
+                        var int=window.setInterval("showNoticByOrder()",5000);
+                    }
+                });
+            </script>
+                    </div>-->
+        <div class="book_info_box">
+            <!--封面-->
+            <div class="book_info">
+                <div class="left">
+                    <div class="pic">
+                        <img src="{$Detail.thumb}" alt="{$Detail.title}">
+                    </div>
+                </div>
+                <div class="book_r_box">
+                    <dl>
+                        <dt class="name">{$Detail.title}</dt>
+                        <dd class="dd_box">
+                            作者：{$Detail.author}<br>
+                        </dd>
+                        <dd class="dd_box">
+                            <span>分类：{$Detail.category}</span><span>字数：有很多</span>
+                        </dd>
+                        <dd class="dd_box">
+                            <!-- 来源：小说阅读网 -->
+                            <em class="reda">非包月作品</em>
+                        </dd>
+                        <dd class="txt">
+                            有<span class="red">很多万</span>人正在阅读
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+            <div class="update">
+                <a href="{:U('view?bookid='.$bookid.'&index='.$Detail[last_chapter_index])}"> <i>更</i>
+                    <p>
+                        <span class="chap">{$Detail.last_chapter_title}</span><span class="blue"><eq name="Detail.status" value="1">（连载中）<else />（完结）</eq></span><br> <span class="time"> {$Detail.last_chapter_update_time|date="Y-m-d H:i:s", ###}</span>
+                    </p>
+                </a>
+            </div>
+
+            <div class="book_action">
+                <a class="btn-green" href="{:U('view?bookid='.$bookid.'&index='.$xudu_id)}">继续阅读</a>
+                <a id="add_bookcase">加入书架</a> 
+                <a href="#" id="cache_chapter">下载缓存</a> 
+                <a href="#">投月票</a>
+            </div>
+        </div>
+        <div class="info_box_txt">
+            <h2 class="title-h">内容简介</h2>
+            <p onclick="BookEx.descSwitch(this)">
+                {:mb_substr($Detail[summary],0,50,"utf-8")}.....<a href="javascript:void(0);">【展开】</a>
+            </p>
+            <p onclick="BookEx.descSwitch(this);" style="display: none;">
+                {$Detail.summary}...<a href="javascript:void(0);">【收起】</a>
+            </p>
+        </div>
+        <div class="mulu">
+            <h2 class="title-h">目录</h2>
+            <ul>
+                <foreach name="page_list" item="item">
+                <li><a class="title" href="{:U('view?bookid='.$bookid.'&index='.$item[index])}">{$item.title}</a></li>
+                </foreach>
+
+
+            </ul>
+            <div class="bon">
+                <a href="{:U('newpartlist?bookid='.$bookid)}" class="btn-grey">查看全部目录</a>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        
+        <div class="back2top">
+            <a href="#top">回到顶部</a>
+        </div>
+    </div>
+    
+    <div id="back2top" class="back2top" onclick="window.scrollTo(0, 0);" style="display: none;"></div>
+<script>
+    var xudu_id = {$xudu_id};
+    //ajax 处理添加书架
+    $("#add_bookcase").click(function() {
+        alert('别点我了, 功能还没做!');
+    });
+    //缓存章节
+    $("#cache_chapter").click(function() {
+    	$("#cache_chapter").html('正在下载');
+    	if(window.localStorage){
+            localStorage.clear();
+		}else{
+			  alert('This browser does NOT support localStorage');
+			  return false;
+		}
+    	var num = 10;  //缓存10章
+    	$.ajax({
+            type : "get",
+            url : "{:U('ajax_cacheChapter?bookid='.$bookid)}",
+            data: {num:num},
+            timeout : 20000,
+            dataType: "json",
+            success : function(data, statu) {
+            	console.log(data);
+            	$.each(data.data, function(name, value) {
+            		localStorage.setItem(name, value);
+            	});
+            	$("#cache_chapter").html('缓存' + data.num + '章');
+            },
+            error : function(e, status) {
+                if (status == 'timeout') {
+                    alert('请求超时，请检查网络后重试！');
+                } else {
+                    alert('网络原因未能添加成功，稍后请重试！');
+                }
+
+            }
+        });
+    });
+
+</script>
+</body>
+</html>

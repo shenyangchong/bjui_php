@@ -1,0 +1,224 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="gb2312">
+<title>书库</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href="/Public/shenma/css/base_201409.css?v=20150805" rel="stylesheet" type="text/css">
+
+<link href="/Public/shenma/css/2014-fenlei - rejifenlei.css?v=20150805" rel="stylesheet" type="text/css">
+<link href="/Public/shenma/css/2014-footer.css?v=20150805" rel="stylesheet" type="text/css">
+<script src="/Public/shenma/js/jquery.js?v=201412209" type="text/javascript"></script>
+<script src="/Public/shenma/js/common.js?v=201412209" type="text/javascript"></script>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?5a477e1c99330cb03ff8c983438b2ed2";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<meta property="qc:admins" content="3474377131730576563526654" />
+</head>
+<body>
+    <div class="bookinfo">
+        <div class="book_title">
+            <!-- <a href="/class.html" class="return">
+                <div class="arrows-left">
+                    <span class="icon1"><span class="icon2"></span></span>
+                </div>
+            </a> -->
+            <h2>书库</h2>
+            <a class="dh_select" href="javascript:Common.toggleTopNav();">导航</a>
+            <div id="topNavBox" class="catalogbox" style="display: none;">
+                <span class="arrow_up"></span>
+                <div class="catalog">
+                    <a href="/">首页</a> <a href="{:U('user')}">个人中心</a> <!-- <a href="/Public/shenma/usercp.php?a=bookcase">书架</a> <a href="/Public/shenma/top.php?a=topindex">排行</a> <a href="/Public/shenma/index.php?a=client_download">客户端</a> <a href="/Public/shenma/pay.php?a=zhifubao">充值</a> -->
+                </div>
+                <div class="line"></div>
+            </div>
+        </div>
+        <!-- <div class="nav" id="topone">
+            <ul>
+                <li><a href="##" id="103">异术超能</a></li>
+                <li><a href="##" id="185">官场小说</a></li>
+                <li><a href="##" id="186">热血都市</a></li>
+                <li><a href="##" id="187">都市生活</a></li>
+                <li><a href="##" id="188">谍战特工</a></li>
+                <li><a href="">查看更多</a></li>
+            </ul>
+        </div> -->
+        <div class="book_info_box">
+            <div class="hd">
+                <h2 class="abc  current" id="preshu">历史记录</h2>
+                <h2 class="abc" id="pfengtui">书库</h2>
+                <h2 class="abc" id="pfengtui_two">暂无</h2>
+            </div>
+            <div class="searchbox">
+                <form action="/index.php" method="get">
+                    <input name="m" type="hidden" value="Home" /> 
+                    <input name="c" type="hidden" value="Shenma" /> 
+                    <input name="a" type="hidden" value="search" /> 
+                    <input class="search-input" name="keywords" id="keywords" type="text" value="" placeholder="请输入关键字">
+                    <div class="inputclose" style="display: block;" onclick="document.getElementById('keywords').value=''"></div>
+                    <input class="bton-search" name="search-bton" type="submit" value="搜索">
+                </form>
+            </div>
+            <div class="book_info" id="reshu">
+                <foreach name="xudu" item="index" key="bookid">
+                <dl>
+                    <dt>
+                        <a href="{:U('info?bookid='.$bookid)}">{$xudu_list.$bookid.title}</a>
+                    </dt>
+                    <dd class="pic">
+                        <a href="{:U('info?bookid='.$bookid)}"><img src="{$xudu_list.$bookid.thumb}" alt="{$xudu_list.$bookid.title}"></a>
+                    </dd>
+                    <dd class="auther">作者：{$xudu_list.$bookid.author}</dd>
+                    <dd class="info">简介：{:mb_substr($xudu_list[$bookid][summary],0,50,"utf-8")}</dd>
+                    <dd class="text">
+                        <span>最新章节: {$xudu_list.$bookid.last_chapter_update_time|date="Y-m-d H:i:s",###} </span><a href="{:U('view?bookid='.$bookid.'&index='.$xudu_list[$bookid][last_chapter_index])}">{$xudu_list.$bookid.last_chapter_title}</a>
+                    </dd>
+                    <dd class="text">
+                        <a href="{:U('view?bookid='.$bookid.'&index='.$index)}">【继续阅读】</a>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a href="{:U('deleteCookie?bookid='.$bookid)}">删除</a>
+                    </dd>
+                </dl>
+                </foreach>
+                
+            </div>
+            <div class="book_info" id="fengtui" style="display:none">
+                <foreach name="page_list" key="num" item="item">
+                <lt name="num" value="20">
+                <dl>
+                    <dt>
+                        <a href="{:U('info?bookid='.$item[id])}">{$item.title}</a>
+                    </dt>
+                    <dd class="pic">
+                        <a href="{:U('info?bookid='.$item[id])}"><img src="{$item.thumb}" alt="{$item.title}"></a>
+                    </dd>
+                    <dd class="auther">作者：{$item.author}</dd>
+                    <dd class="info">简介：{:mb_substr($item[summary],0,50,"utf-8")}</dd>
+                    <dd class="text">
+                        <span>最新章节: {$item.last_chapter_update_time|date="Y-m-d H:i:s",###} </span><a href="{:U('view?bookid='.$item[id].'&index='.$item[last_chapter_index])}">{$item.last_chapter_title}</a>
+                    </dd>
+                    <dd class="text">
+                        <if condition="$xudu[$item[id]]">
+                        <a href="{:U('view?bookid='.$item[id].'&index='.$xudu[$item[id]])}">【继续阅读】</a>
+                        <else />
+                        <a href="{:U('view?bookid='.$item[id].'&index=1')}">【开始阅读】</a>
+                        </if>
+                    </dd>
+                </dl>
+                <else />
+                <div class="button-last_text_time">
+                    <div style="height:20px;width:100%"></div>
+                    <div class="more btn-grey last_text_time"><a href="javascript:add_more(3,20,'last_text_time');" >点击加载更多小说</a></div>
+                </div>
+                </lt>
+                </foreach>
+                
+                
+            </div>
+
+        </div>
+        <script type="text/javascript">
+ 
+//加载更多文件
+    function add_more(sortid,offest,ordertype){
+     $.ajax({
+          type:"post",
+          url:"{:U('Shenma/ajax_list')}",
+          data:{sortid:sortid,offset:offest,ordertype:ordertype},
+          success:function(data,statu){
+              if(data == 1 || data == 2){
+                  alert("请求错误请刷新重试！");
+              }else{
+                  $("div.button-"+ordertype).before(data);
+              }
+         },
+          error:function(e,status){
+              if(status=='timeout'){
+                  alert('请求超时，请检查网络后重试！');
+              }else{
+                 alert('网络原因未能成功加载，稍后请重试！');
+              }
+          }
+      });
+}
+$(function(){
+        //进入页面首先调用一次模块切换效果方法
+        changemodel();
+        //三级分类的点击选中效果
+        $("div#topone ul li").click(function(){
+            $("a",this).addClass(" hover");
+            $(this).siblings().children("a").removeClass(" hover");
+            var idcontent = $("a",this).attr("id");
+            //alert(idcontent);
+            
+                $.ajax({
+                  type:"post",
+                  url:"/Public/shenma/sort.php?a=get_sort_articleinfo",
+                  data:{sortid:idcontent},
+                  success:function(data,statu){
+                      //alert(data);
+                      if(data == 1 || data == 2){
+                          alert("请求错误请刷新重试！");
+                      }else{
+                          $("div.book_info_box").html(data);
+                          //调用模块切换效果方法
+                          changemodel();
+                      }
+                 },
+                  error:function(e,status){
+                      if(status=='timeout'){
+                          alert('请求超时，请检查网络后重试！');
+                      }else{
+                         alert('网络原因未能成功加载，稍后请重试！');
+                      }
+                  }
+             });
+            
+        });
+    
+});
+//选项卡效果方法
+function changemodel(){
+    $("#preshu").click(function(){
+        $(".bd").hide();
+        $(".abc").removeClass('current');
+        $("#preshu").addClass('current');
+        $("#reshu").show();
+        $("#fengtui_two").hide();
+        $("#fengtui").hide();
+    });
+    $("#pfengtui").click(function(){
+        $(".bd").hide();
+        $(".abc").removeClass('current');
+        $("#pfengtui").addClass('current');
+        $("#fengtui").show();
+        $("#reshu").hide();
+        $("#fengtui_two").hide();
+    });
+    $("#pfengtui_two").click(function(){
+        $(".bd").hide();
+        $(".abc").removeClass('current');
+        $("#pfengtui_two").addClass('current');
+        $("#fengtui_two").show();
+        $("#fengtui").hide();
+        $("#reshu").hide();
+    });
+}
+</script>
+    </div>
+    <!-- 公共脚 -->
+    <div class="footer">
+        
+        <div class="back2top">
+            <a href="#top">回到顶部</a>
+        </div>
+    </div>
+</body>
+</html>

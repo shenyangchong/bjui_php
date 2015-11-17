@@ -1,0 +1,98 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="gb2312">
+<title>登录</title>
+<meta name="generator" content="小说阅读网">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="author">
+<meta id="ctl00_metaKeywords" name="keywords" content="手机小说阅读网">
+<meta id="ctl00_metaDescription" name="description" content="手机小说阅读网,小说手机阅读。手机小说阅读网提供最新章节首发">
+<meta name="robots" content="all">
+<meta name="googlebot" content="all">
+<meta name="baiduspider" content="all">
+<meta name="Yahoo! Slurp" content="all">
+<link href="/Public/shenma/css/2014-login.css?v=20150805" rel="stylesheet" type="text/css">
+<link href="/Public/shenma/css/2014-footer.css?v=20150805" rel="stylesheet" type="text/css">
+<script src="/Public/shenma/js/jquery.js?v=201412209" type="text/javascript"></script>
+<script src="/Public/shenma/js/common.js?v=201412209" type="text/javascript"></script>
+</head>
+
+<body>
+<div class="book_title"> <a href="javascript:history.go(-1)" class="return">
+    <div class="arrows-left"><span class="icon1"><span class="icon2"></span></span></div>
+    </a>
+    <h2>登录</h2>
+    <a class="dh_select" href="javascript:Common.toggleTopNav();">导航</a>
+    <div id="topNavBox" class="catalogbox" style="display: none;"> <span class="arrow_up"></span>
+      <div class="catalog"> <a href="/">首页</a> <a href="/usercp.html">个人中心</a> <a href="">书架</a> <a href="/web/top.php?a=topindex">排行</a> <a href="/web/index.php?a=client_download">客户端</a> <a href="/web/pay.php?a=zhifubao">充值</a></div>
+      <div class="line"></div>
+    </div>
+  </div>
+
+<div class="formlonin">
+          <form action="/login.html?is_post=1" method="post">
+        <input type="text" class="input1" name="username"  value=""  placeholder="请输入您的账号/手机号">
+        <input type="password" class="input1"  name="password"  value=""  placeholder="请输入您的密码"><br>
+        <label class="left"><input name="savepasswd"  type="checkbox" value="on" checked style="width:20px; height:20px; background:none; "><font>记住登录状态（一个月有效）</font></label>
+        <label><a href="/web/login.php?a=getback_password">忘记密码</a></label>
+        <input type="hidden"  name="job" value="login" />
+        <input type="hidden" name="backurl" value="" />
+                <input type="submit" class="input2 btn-blue" value="登录"><a href="/web/login.php?a=register_sj"><input type="button" class="input2 btn-white" value="注册 "></a>
+         <input type="hidden" name="subject" value="" />
+     </form>
+    <p style="margin-top:30px;"><b>注册会员后，您即可享有：</b></p>
+    <p>1、参与有奖活动</p>
+    <p>2、精品免费阅读</p>
+    <p>3、体验会员专属书架</p>
+    <p>4、掌握作品更新动态</p> 
+    <div class="divqq">使用合作网站账号登录：<span class="btns" style="display:inline-block">
+   <a href="javascript:;" class="qq_login" onclick="window.location.href='{:U('Oauth/qq')}';">QQ登录</a></span></div>
+    
+</div>
+ <!-- 公共脚文件 -->
+<div class="footer">
+  <div class="btmnav">
+    <div class="nav"><a href="javascript:Common.toggleCategory(0);" class="close" id="sort">分类
+      <div class="arrows-type"><span class="icon1"><span class="icon2"></span></span></div>
+      </a><a href="/usercp.html">个人中心</a><a href="/web/usercp.php?a=bookcase">书架</a><a href="/web/pay.php?a=zhifubao">充值</a><a href="/web/top.php?a=topindex">排行榜</a> </div>
+    <div class="catalogbox" id="catebtm" style="display: none;">
+      <div class="catalog">
+        <h3>男频小说</h3>
+        <a href="/ch/3.html">武侠仙侠</a> 
+        <a href="/ch/6.html">都市小说</a>
+         <a href="/ch/1.html">奇幻玄幻</a> 
+         <a href="/ch/5.html">网游竞技</a> 
+         <a href="/ch/7.html">历史军事</a> 
+         <a href="/ch/4.html">灵异推理</a> 
+      </div>
+      <div class="catalog">
+        <h3>女频小说</h3>
+        <a href="/ch/2.html">总裁豪门</a> 
+        <a href="/ch/15.html">穿越架空</a> 
+        <a href="/ch/8.html">古代言情</a> 
+        <a href="/ch/11.html">仙侠魔幻</a> 
+        <a href="/ch/16.html">都市青春</a> 
+      </div>
+      <div class="catalog">
+        <h3>校园小说</h3>
+        <a href="/ch/10.html">青春校园</a> 
+        <a href="/ch/14.html">素锦年华</a> 
+        <a href="/ch/13.html">魔幻传奇</a> 
+        <a href="/ch/9.html">同人小说</a> 
+        <a href="/ch/22.html">轻小说</a> 
+      </div>
+      <div class="catalog">
+       <a href="/"><h3>首页</h3></a><a href="http://t.xs.cn/web/mobilegame.php?a=center"  style="font-size:12px; olor:#0065b5;padding-right:1em;"><h3 style=" text-align:right;">游戏中心</h3></a>
+      </div>
+      </div>
+  </div>
+  <div class="footer_msg"><a href="" class="blue">炫彩版</a>&nbsp;&nbsp;<a href="http://3g.xs.cn?tpl_style=3g">3G版</a>&nbsp;&nbsp;<a href="http://m.xs.cn?tpl_style=wap">WAP版</a>&nbsp;&nbsp;<a href="/web/index.php?a=client_download">客户端</a><br>
+    <a href="/web/index.php?a=kefu">联系客服</a>&nbsp;&nbsp;<a href="/shangwu">商务合作</a>&nbsp;&nbsp;<a href="/web/index.php?a=help">帮助</a>&nbsp;&nbsp;<a href="/web/index.php?a=jianyi">建议</a></div>
+  <p class="copyright">&copy;2004-2015 <a href="/">xs.cn</a> 京ICP证090166号</p>
+  <div class="back2top"><a href="#top">回到顶部</a></div> 
+</div>
+<!--  统计公共文件  -->
+</body>
+</html>

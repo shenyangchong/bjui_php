@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html>
+<!--STATUS OK-->
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="white"/>
+    <title>正在载入...</title>
+    <script>
+        void function(g,f,j,c,h,d,b){g.alogObjectName=h,g[h]=g[h]||function(){(g[h].q=g[h].q||[]).push(arguments)},g[h].l=g[h].l||+new Date,d=f.createElement(j),d.async=!0,d.src=c,b=f.getElementsByTagName(j)[0],b.parentNode.insertBefore(d,b)}(window,document,"script","http://img.baidu.com/hunter/alog/alog.mobile.min.js","alog");void function(){function c(){return;}window.PDC={mark:function(a,b){alog("speed.set",a,b||+new Date);alog.fire&&alog.fire("mark")},init:function(a){alog("speed.set","options",a)},view_start:c,tti:c,page_ready:c}}();void function(n){var o=!1;n.onerror=function(n,e,t,c){var i=!0;return!e&&/^script error/i.test(n)&&(o?i=!1:o=!0),i&&alog("exception.send","exception",{msg:n,js:e,ln:t,col:c}),!1},alog("exception.on","catch",function(n){alog("exception.send","exception",{msg:n.msg,js:n.path,ln:n.ln,method:n.method,flag:"catch"})})}(window);
+    </script>
+    <script>
+        var Novel = {
+             speed : {
+                start: new Date().getTime()
+            },
+            front: {$js_front},
+            packing: {
+                enable: true,
+                cacheOnly: true,
+                url: "http://npacking.baidu.com/novel/packing" +"?gid=" + "1703774313" +"&src=" + encodeURIComponent("http%3A%2F%2Fwww.aszw.com%2Fbook%2F3%2F3008%2F") + "&filetype=txt"
+            },
+            searchbox: {
+                minVer:"4.5.1",
+                dynamicSrc:"http://apkdispatch.m.baidu.com/apkdispatch?atype=1&busid=1",
+                staticSrc:"http://gdown.baidu.com/searchbox/android/directd/release/baidu_1001585t.apk"
+            },
+            verify: {
+                id: 'wisenovel',
+                time:"",
+                skey:""
+            },
+            bdBrowser: {
+                minVer: "4.2.11.0",
+                size: "5.4MB",
+                src: "http://mic.bdstatic.com/static/novel_apk/baidubrowser_20131113.apk"
+            }
+        };
+
+        if (parseInt(100 * Math.random()) == 10 && !Novel.front.initargs.dict) {
+            Novel.hs_time = new Date() * 1
+        }
+    </script>
+    <link rel="stylesheet" href="/Public/xiaoshuo/css/info.css?v=20150824007">
+</head>
+<body  class="alaxs " >
+<div id="AddressbarFixer"></div>
+<div id='AlaNovel'>
+    <div id="sApp" class="app-wraper">
+        <div id="listPage" class="app-page list-page">
+            <div class="app-space">
+                <div class="xs-index">
+    <div class="t-listbar">
+        <div class="s-hover t-button t-back" data-action="back" id="ToolListBack">
+            <span class="xs-icon xs-back-icon"></span>
+        </div>
+        <h1 class="t-pagename ellipsis">
+            小说详情
+        </h1>
+
+        <div class="s-hover t-button t-fav" data-action="novelbag" data-ref='tc_dir_l0' id="ToolFav">书包</div>
+        <div class="t-switch t-button t-bdfav" id='ToolBdFav1' data-target="ToolBdFavTip1">更多</div>
+        <div class="t-bdfavtip" id="ToolBdFavTip1">
+            <span class="s-hover t-bdfavdata" data-add="add_1">添加书签</span>
+            <span class="s-hover t-bdfavdata" data-add="add_2">添到首页</span>
+            <span class="s-hover t-bdfavdata" data-add="add_3">添到桌面</span>
+        </div>
+    </div>
+    
+        
+    
+    <div class='xs-notice'>
+        公告:为响应国家净网行动清理涉黄小说，部分小说或章节将不予展示，待有关部门审核通过后恢复。
+    </div>
+    <div class="box-h xs-head">
+        
+
+        <div class="xs-image">
+            <span class="xs-image-superscript"></span>
+            <img src="http://timg01.baidu-img.cn/timg?pa&amp;di=c7d92120855091850e2eaf3d2c67bc4c&amp;sec=1440490260&amp;quality=100&amp;size=%40tpl_size%40&amp;src=http%3A%2F%2Fbj.bs.baidu.com%2Fwise-novel-authority-logo%2F8584bbc8f05f70d0ea15b45262e502ea.jpg%3Fsign%3DMBO%3AukiZg0s7VRDjqbuWyVZfM4dXK1rXmASXl2w%3AM3MF76Jyc3K4J6o7XkN0vXO%252BCY8%253D" />
+            <span class='xs-image-lineleft'></span>
+            <span class='xs-image-lineright'></span>
+            </div>
+            
+        <div class="xs-attrs">
+            
+            <div class='xs-head-bookname'>
+                裁决
+            </div>
+            
+            
+            <div class=" xs-attr ellipsis xs-head-author"><b>作者:</b>
+                 
+                    <a class='xs-head-author-text s-hover' href='http://m.baidu.com/s?word=%E4%B8%83%E5%8D%81%E4%BA%8C%E7%BC%96&tn=iphone'>七十二编</a>
+                
+                </div>
+            
+            
+            <div class="xs-attr  ellipsis"><b>分类:</b><span>玄幻</span></div>
+            
+            
+            
+                
+            <div class='xs-head-source'>
+                        <span>来源:</span><span class='xs-head-sourcename'>aszw</span>
+                        <a class='xs-head-source-change s-hover xs-hide' href="http://m.baidu.com/s?word=%E8%A3%81%E5%86%B3&gid=1703774313&st=11n041&order=1&tn=xsb&query_type=query_type_gid">切换来源<span class='xs-head-source-icon t-icon'></span>
+                        </a>
+            </div>
+                
+            
+        </div>
+    </div>
+
+        <div class='xs-user box-h'>
+            
+                <div class='xs-user-read s-hover box-h' data-path="http://www.89read.com/html/book/67/67504/4551205.htm" data-action='chapter'></div>
+            
+            
+            
+                <div class="ellipsis box-h" id="offlineBtnWrapper"><button class="btn s-hover" target="_blank"  id="offline-btn" onclick="Novel.offlineReading.start()">整本离线</button></div>
+            
+        </div>
+
+        <div class="xs-line-h"></div>
+        <div class="xs-reader">
+            <div id="XSReaded">
+                <div class="box-h xs-readed">
+                    <span class="s-hover xs-readed-now ellipsis box-h" data-action="chapter"></span>
+                </div>
+            </div>
+            
+            <div class="s-hover xs-updated ellipsis box-h" data-action="chapter"  data-index='575' data-path="http://www.aszw.com/book/3/3008/20395523.html" >
+            <span class="xs-reader-new box-h" >最新</span><b class='box-h'>第173章 权杖指引的方向(上)</b>
+            </div>
+            
+        </div>
+
+    
+        <div class="xs-tag">
+            <div class='xs-tag-name'>小说标签</div>
+            <div class='s-hover xs-tag-button' data-action='zhidao-tag' pos='list-top' data-path="http://zhidao.baidu.com/mmisc/senovel?tag=%E8%85%B9%E9%BB%91&witype=2&frwise=1">腹黑</div><div class='s-hover xs-tag-button' data-action='zhidao-tag' pos='list-top' data-path="http://zhidao.baidu.com/mmisc/senovel?tag=%E5%BC%82%E7%95%8C&witype=2&frwise=1">异界</div><div class='s-hover xs-tag-button' data-action='zhidao-tag' pos='list-top' data-path="http://zhidao.baidu.com/mmisc/senovel?tag=%E4%BF%AE%E7%82%BC%E6%88%90%E9%95%BF&witype=2&frwise=1">修炼成长</div><div class='s-hover xs-tag-button' data-action='zhidao-tag' pos='list-top' data-path="http://zhidao.baidu.com/mmisc/senovel?tag=%E7%88%BD%E6%96%87&witype=2&frwise=1">爽文</div>
+        </div>
+        
+
+        
+        <div class="xs-sum">
+            <div class="xs-sum-name">内容简介</div>
+            <div class=" s-hover  xs-sum-short" data-action="summary">
+                
+                    一个外表天真纯朴，一脸迷糊的大头男孩，却是一个跟着暴躁矮人学了好脾气，跟着傲慢精灵学了谦虚，跟着爱
+                    <div class="xs-sum-full">撒谎的侏儒学会了诚实，跟着野蛮人学会了礼仪的小混蛋。当这个无法修炼斗气的乡巴佬，从南方小城走上舞台的时候，他要成为最伟大的骑士。作者起点广播名--剥了壳壳吃米米
+                    </div>
+                    
+                    <div class="xs-sum-down box-h" >
+                        <span class='xs-sum-text'>全部</span><b class="xs-icon xs-sum-icon"></b>
+                    </div>
+                    <div class="xs-sum-up box-h">
+                        <span class='xs-sum-text'>收起</span><b class="xs-icon xs-sum-icon"></b>
+                    </div>
+                    
+                
+            </div>
+        </div>
+        
+
+    <div class="xs-list-head">
+    <span class="xs-head-text">目录:</span>
+    <div class="box-h xs-order s-hover" data-action="order">
+        反序
+    </div>
+    </div>
+    <div id="XSList"></div>
+    
+    
+    <div class="r-paging">
+        <div class="s-hover r-paging-button r-paging-pre" >
+            上一页
+        </div>
+        <div class="s-hover r-paging-button r-button-select r-paging-cont">
+            <span class="r-paging-cur">1</span>&nbsp;/&nbsp;58
+            <span class="r-paging-icon r-sel-icon"></span>
+            <select class="r-paging-select"></select>
+        </div>
+        
+        <div class="s-hover r-paging-button r-paging-next" >
+            下一页
+        </div>
+    </div>
+    
+    
+<!-- <div class="xs-rp">
+    <div class="xs-line-h"></div>
+    <div class="rp_list_title">猜你喜欢<span class='s-hover rp_list_more' data-action='zhidao-tag' pos='chapter-rp'>更多</span></div>
+    <ul class ="rp_list_ul">
+        
+            <li class="rp_list_li">
+            <a class="s-hover" href="./tc?appui=alaxs&srd=1&router=rpdata&gid=3197191974&rporder=0&rpshows=3197191974,3735885596,2653609498,922480590,547288675&original=1703774313&rpsrct=dir">
+                <div class="rp_list_t">星战风暴</div>
+                <div class="rp_list_w ellipsis">骷髅精灵</div>
+                <div class="rp_list_r"><div class="rp_list_n">47027</div>人读</div>
+            </a>
+            </li>
+        
+            <li class="rp_list_li">
+            <a class="s-hover" href="./tc?appui=alaxs&srd=1&router=rpdata&gid=3735885596&rporder=1&rpshows=3197191974,3735885596,2653609498,922480590,547288675&original=1703774313&rpsrct=dir">
+                <div class="rp_list_t">择天记</div>
+                <div class="rp_list_w ellipsis">猫腻</div>
+                <div class="rp_list_r"><div class="rp_list_n">87030</div>人读</div>
+            </a>
+            </li>
+        
+            <li class="rp_list_li">
+            <a class="s-hover" href="./tc?appui=alaxs&srd=1&router=rpdata&gid=2653609498&rporder=2&rpshows=3197191974,3735885596,2653609498,922480590,547288675&original=1703774313&rpsrct=dir">
+                <div class="rp_list_t">永夜君王</div>
+                <div class="rp_list_w ellipsis">烟雨江南</div>
+                <div class="rp_list_r"><div class="rp_list_n">5288</div>人读</div>
+            </a>
+            </li>
+        
+            <li class="rp_list_li">
+            <a class="s-hover" href="./tc?appui=alaxs&srd=1&router=rpdata&gid=922480590&rporder=3&rpshows=3197191974,3735885596,2653609498,922480590,547288675&original=1703774313&rpsrct=dir">
+                <div class="rp_list_t">精灵王</div>
+                <div class="rp_list_w ellipsis">天空骑士</div>
+                <div class="rp_list_r"><div class="rp_list_n">1352</div>人读</div>
+            </a>
+            </li>
+        
+            <li class="rp_list_li">
+            <a class="s-hover" href="./tc?appui=alaxs&srd=1&router=rpdata&gid=547288675&rporder=4&rpshows=3197191974,3735885596,2653609498,922480590,547288675&original=1703774313&rpsrct=dir">
+                <div class="rp_list_t">星河贵族</div>
+                <div class="rp_list_w ellipsis">奥尔良烤鲟鱼堡</div>
+                <div class="rp_list_r"><div class="rp_list_n">3190</div>人读</div>
+            </a>
+            </li>
+        
+    </ul>
+</div> -->
+      
+    <div class='xs-page-bottom'>
+    <div class="xs-promot-place"></div>
+    <div class="xs-bottom">
+      
+        <a class='s-hover xs-bottom-originalPage' id='xsBottomOriginalPage' href="http://www.aszw.com/book/3/3008/" target="_blank">原网页</a> |
+        <a class='s-hover xs-user-feedback' href="http://ifeedback.baidu.com" target="_blank">用户反馈</a> | 
+        <a  class='s-hover xs-bottom-statement' href="http://m.baidu.com/pub/help.php?pn=20&bd_page_type=1" target="_blank">转码声明</a>
+    
+        <div class='xs-promotion'><span class='xs-wx-icon'></span><span>公共号:小说渣渣团</span></div>
+    </div>
+</div>
+</div>
+            </div>
+        </div>
+        <div id="chapterPage" class="app-page chapter-page">
+            <div class="app-space"></div>
+        </div>
+    </div>
+</div>
+<!-- optip -->
+<div id="tipPanel">
+    <div class="optip-tu"></div>
+</div>
+<!-- overlay -->
+<div id="overlay" class="s-hover"></div>
+<!-- loading -->
+<div id="loadingPanel">
+    <div class="circle"></div>
+    <div class="loading-cont">
+        <span class="loading-h">努力加载中...</span>
+        <span class="loading-tip">读书虽好，可别用眼过度啦~</span>
+    </div>
+</div>
+<!--tip-->
+<div class="alert alert-info" data-action='errortip'>
+    收到喽~努力修改中~
+</div>
+<!-- error -->
+<div class='modal-wrapper' id='error-dialog'>
+    <div id="errorPanel" class="modal">
+        <div class="error-tip">网络堵车，请再试试</div>
+        <div class="error-op">
+            <span class="s-hover error-btn error-reload disabled" data-action="reload-error">重试</span>
+            <span class="s-hover error-btn" data-action="close-error">关闭</span>
+        </div>
+    </div>
+    <div class="modal-backdrop"></div>
+</div>
+<!-- dialog -->
+<div id="dialogPanel">
+    <div class="dialog-tip"></div>
+    <div class="dialog-op">
+        <span class="s-hover dialog-btn btn-confirm">确定</span>
+        <span class="s-hover dialog-btn btn-cancel">取消</span>
+    </div>
+</div>
+
+<div class="modal-wrapper" id="offlineTipsDialog">
+    <div class="modal">
+        <div class="modal-body">
+            <p class="first-line">离线整本小说</p>
+
+            <p class="hilight">离线到本地,断网也能阅读哦~</p>
+        </div>
+        <div class="modal-footer">
+            <div class="left box-h">
+                <a class="btn-confirm" href='javascript:void(0)'>
+                    <div class="btn-content">
+                        <span class="text">立即下载(<span class="novelSize"></span>)</span>
+                    </div>
+                </a>
+            </div>
+            <div class="right box-h">
+                <a class="btn-cancel" href='javascript:void(0)'>
+                    <div class="btn-content">
+                        <span class="text">取消</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div style="clear:both"></div>
+    </div>
+    <div class="modal-backdrop"></div>
+</div>
+
+<div class="modal-wrapper" id="offlineTipsBrowserDialog">
+    <div class="modal">
+        <div class="modal-body">
+            <p class="first-line">离线整本小说</p>
+
+            <p class="hilight">离线到本地,断网也能阅读哦~</p>
+        </div>
+        <div class="modal-footer">
+            <div class="left box-h">
+                <a class="btn-confirm" href='javascript:void(0)'>
+                    <div class="btn-content">
+                        <span class="text">立即下载(<span class="novelSize"></span>)</span>
+                    </div>
+                </a>
+            </div>
+            <div class="right box-h">
+                <a class="btn-cancel" href='javascript:void(0)'>
+                    <div class="btn-content">
+                        <span class="text">取消</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div style="clear:both"></div>
+    </div>
+    <div class="modal-backdrop"></div>
+</div>
+
+<div class="modal-wrapper" id="downloadSearchboxDialog">
+    <div class="modal">
+        <div class="modal-body">
+            <p class="first-line">离线整本小说</p>
+
+            <p class="hilight">使用最新版手机百度，未安装请下载</p>
+        </div>
+        <div class="modal-footer">
+            <div class="left box-h">
+                <a class="btn-confirm" href='javascript:void(0)'>
+                    <div class="btn-content">
+                        <span class="text">立即下载(23.2M)</span>
+                    </div>
+                </a>
+            </div>
+            <div class="right box-h">
+                <a class="btn-cancel" ref='' href='javascript:void(0)'>
+                    <div class="btn-content">
+                        <span class="text">取消</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div style="clear:both"></div>
+    </div>
+    <div class="modal-backdrop"></div>
+</div>
+
+<div class="modal-wrapper" id="downloadbdBrowserDialog">
+    <div class="modal">
+        <div class="modal-body">
+            <p class="first-line">离线整本小说</p>
+
+            <p class="hilight">使用最新版手机百度，未安装请下载</p>
+        </div>
+        <div class="modal-footer">
+            <div class="left box-h">
+                <a class="btn-confirm" href='javascript:void(0)'>
+                    <div class="btn-content">
+                        <span class="text">立即下载(5.4M)</span>
+                    </div>
+                </a>
+            </div>
+            <div class="right box-h">
+                <a class="btn-cancel" href='javascript:void(0)'>
+                    <div class="btn-content">
+                        <span class="text">取消</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div style="clear:both"></div>
+    </div>
+    <div class="modal-backdrop"></div>
+</div>
+
+<div class="toolbar chapterbar" id="ToolBar">
+    <div class="t-wrap nav">
+        <div class="t-button t-list nav-item s-hover" data-action="list" data-path="" id="ToolList">
+            <div class='chapterbar-item'>目录</div>
+        </div>
+        <div class="t-switch t-button t-load nav-item" data-target="ToolLoadTip" id="preloadChapterBtn">
+            <div class='chapterbar-item'>离线</div>
+        </div>
+        <div class="t-switch t-button t-download nav-item" id="chapterOfflineBtn"
+             onclick="Novel.offlineReading.start();">
+            <div class='chapterbar-item'>离线</div>
+        </div>
+        <div class="t-switch t-button t-font nav-item" data-target="ToolFontTip">
+            <div class='chapterbar-item'>设置</div>
+        </div>
+        <div class="t-switch t-button t-source nav-item" data-target="ToolSourceTip">
+            <div class='chapterbar-item'>换源</div>
+        </div>
+        <div class="t-button t-fav nav-item s-hover" data-action="novelbag" data-ref='tc_zw_l0' id='ToolFav'>
+            <div class='chapterbar-item'>书包</div>
+        </div>
+        <div class="t-switch t-button t-bdfav nav-item" id='ToolBdFav' data-target="ToolBdFavTip">
+            <div class='chapterbar-item'>更多</div>
+        </div>
+    </div>
+
+    <div class="t-bdfavtip" id="ToolBdFavTip">
+        <span class="s-hover t-bdfavdata" data-add="add_1">添到书架</span>
+        <span class="s-hover t-bdfavdata" data-add="add_2">添到首页</span>
+        <span class="s-hover t-bdfavdata" data-add="add_3">添到桌面</span>
+    </div>
+    <div class="t-fonttip subtoolbar" id="ToolFontTip">
+        <div class="xs-model-box">
+            <div class="xs-model-item">
+                <span class="t-modedata sun active btn circle" data-mode="mode_1">日间</span>
+            </div>
+            <div class='xs-model-item'>
+                <span class="t-modedata eyes btn circle" data-mode="mode_3">护眼</span>
+            </div>
+            <div class='xs-model-item'>
+                <span class="t-modedata paper btn circle" data-mode="mode_4">纸张</span>
+            </div>
+            <div class='xs-model-item'>
+                <span class="t-modedata night btn circle" data-mode="mode_2">夜间</span>
+            </div>
+        </div>
+        <div class="xs-font-box">
+            <span class="btn square t-fontdata small">A-</span>
+            <span class="btn square t-fontdata big">A+</span>
+        </div>
+    </div>
+    <div class="t-sourcetip subtoolbar" id="ToolSourceTip">
+    </div>
+    <div class="t-loadtip subtoolbar" id="ToolLoadTip">
+        <div class='xs-load-hook '>
+            <div class='xs-load-label'>离线预读章节:</div>
+            <div class='xs-load-button'>
+                <span class="s-hover t-loaddata small btn square"><span class="icon"></span></span>
+                <span class="t-loadcase"><e class="t-loadnum">1</e> 章</span>
+                <span class="s-hover t-loaddata big btn square"><span class="icon"></span></span>
+            </div>
+        </div>
+    </div>
+    <div class="t-xs">
+        <div class="s-hover t-xs-pre" data-action="chapter" data-path="" data-tag="chapter">上一章</div>
+        <div class="s-hover t-xs-next" data-action="chapter" data-path="" data-tag="chapter">下一章</div>
+    </div>
+</div>
+<div class='t-mask' data-action='mask'></div>
+<script type="text/template" id="XsReadedTpl">
+    <div
+     class="box-h xs-readed"><%if(href){%><span class="s-hover xs-readed-now ellipsis box-h"data-action="chapter"data-path="<%= href %>"><span class="xs-reader-old box-h">已读</span><b><%=text%></b></span><%}
+    else{%><span class="xs-readed-now isnull box-h"><span class="box-h xs-reader-old">已读</span><b>还没有开始阅读哦⊙﹏⊙!</b></span><%}
+    %><%if(next){%><span class="s-hover xs-readed-next box-h"data-action="chapter"data-path="<%= next %>">读下一章</span><%}
+    %></div>
+</script>
+<script type="text/template" id="novelChapter">
+    <div class="xs-chapter">
+    <div class="xs-chapter-header">
+    <div class="xs-chapter-name">
+        裁决
+    </div>
+</div>
+        <% if(isAd){ %>
+            <div class="xs-chapter-urgePage-container urgePage-icon">
+                <div class="xs-chapter-urgePage-h1 <% if(color){ %>xs-chapter-urgePage-h1ColorWhite<% }%>">你已阅读了好几个章节</div>
+                <div class="xs-chapter-urgePage-h1 <% if(color){ %>xs-chapter-urgePage-h1ColorWhite<% }%>">让眼睛休息一下</div>
+                <div class="xs-chapter-urgePage-info xs-chapter-urgePage-infoMargin">在线阅读，会消耗流量，</div>
+                <div class="xs-chapter-urgePage-info">是否下载手机百度，离线这本小说？</div>
+                <div class="xs-chapter-urgePage-info xs-chapter-urgePage-info-downApp">更好的阅读体验，就在手机百度</div>
+                <div onclick="Novel.offlineReading.start()" class="xs-chapter-urgePage-button">整本离线</div>
+                <div class="xs-chapter-urgePage-button xs-chapter-urgePage-AButton"><a>下载手机百度</a></div>
+            </div>
+        <%}%>
+        <% if(updatePage){ %>
+            <div class="xs-chapter-urgePage-container rest-iconf">
+                <div class="xs-chapter-urgePage-h1 <% if(color){ %>xs-chapter-urgePage-h1ColorWhite<% }%>">&nbsp;&nbsp;催更！催更！</div>
+                <div class="xs-chapter-urgePage-info xs-chapter-urgePage-infoMargin">在线阅读，会消耗流量，</div>
+                <div class="xs-chapter-urgePage-info">是否下载手机百度，离线这本小说？</div>
+                <div class="xs-chapter-urgePage-info xs-chapter-urgePage-info-downApp">更好的阅读体验，就在手机百度</div>
+                <div onclick="Novel.offlineReading.start()" class="xs-chapter-urgePage-button">整本离线</div>
+                <div class="xs-chapter-urgePage-button xs-chapter-urgePage-AButton"><a>下载手机百度</a></div>
+            </div>
+        <%}%>
+        <% if(!updatePage && !isAd){ %>
+            <div class="xs-chapter-h1"><%=title%></div>
+            <div class="xs-content"><%=content%></div>
+        <%}%>
+        <div class="xs-chapter-paging r-paging">
+            <div class="s-hover ch-paging-pre r-paging-button <% if(!pt.pre){ %>disable<% } %>" data-action="chapter"
+                 data-oldurl="<%= oldUrl%>" data-path="<%= pt.pre %>" data-tag='chapter'>
+                上一章
+            </div>
+            <div class="r-paging-line"></div>
+            <div class="s-hover ch-paging-list r-paging-button <% if(!listUrl){ %>disable<% }%>" data-action="list"
+                 data-path="<%= listUrl %>">
+                目录
+            </div>
+            <div class="r-paging-line"></div>
+            <div class="s-hover ch-paging-next r-paging-button <% if(!pt.next){ %>disable<% }%>" data-action="chapter"
+                 data-oldurl="<%= oldUrl%>" data-path="<%= pt.next %>" data-tag="chapter">
+                下一章
+            </div>
+        </div>
+    </div>
+    <% if(!pt.next || pt.next ==1){ %>
+    
+<div class="xs-rp">
+    <div class="xs-line-h"></div>
+    <div class="rp_list_title">猜你喜欢<span class='s-hover rp_list_more' data-action='zhidao-tag' pos='chapter-rp'>更多</span></div>
+    <ul class ="rp_list_ul">
+        
+            <li class="rp_list_li">
+            <a class="s-hover" href="./tc?appui=alaxs&srd=1&router=rpdata&gid=3197191974&rporder=0&rpshows=3197191974,3735885596,2653609498,922480590,547288675&original=1703774313&rpsrct=zw">
+                <div class="rp_list_t">星战风暴</div>
+                <div class="rp_list_w ellipsis">骷髅精灵</div>
+                <div class="rp_list_r"><div class="rp_list_n">47027</div>人读</div>
+            </a>
+            </li>
+        
+            <li class="rp_list_li">
+            <a class="s-hover" href="./tc?appui=alaxs&srd=1&router=rpdata&gid=3735885596&rporder=1&rpshows=3197191974,3735885596,2653609498,922480590,547288675&original=1703774313&rpsrct=zw">
+                <div class="rp_list_t">择天记</div>
+                <div class="rp_list_w ellipsis">猫腻</div>
+                <div class="rp_list_r"><div class="rp_list_n">87030</div>人读</div>
+            </a>
+            </li>
+        
+            <li class="rp_list_li">
+            <a class="s-hover" href="./tc?appui=alaxs&srd=1&router=rpdata&gid=2653609498&rporder=2&rpshows=3197191974,3735885596,2653609498,922480590,547288675&original=1703774313&rpsrct=zw">
+                <div class="rp_list_t">永夜君王</div>
+                <div class="rp_list_w ellipsis">烟雨江南</div>
+                <div class="rp_list_r"><div class="rp_list_n">5288</div>人读</div>
+            </a>
+            </li>
+        
+            <li class="rp_list_li">
+            <a class="s-hover" href="./tc?appui=alaxs&srd=1&router=rpdata&gid=922480590&rporder=3&rpshows=3197191974,3735885596,2653609498,922480590,547288675&original=1703774313&rpsrct=zw">
+                <div class="rp_list_t">精灵王</div>
+                <div class="rp_list_w ellipsis">天空骑士</div>
+                <div class="rp_list_r"><div class="rp_list_n">1352</div>人读</div>
+            </a>
+            </li>
+        
+            <li class="rp_list_li">
+            <a class="s-hover" href="./tc?appui=alaxs&srd=1&router=rpdata&gid=547288675&rporder=4&rpshows=3197191974,3735885596,2653609498,922480590,547288675&original=1703774313&rpsrct=zw">
+                <div class="rp_list_t">星河贵族</div>
+                <div class="rp_list_w ellipsis">奥尔良烤鲟鱼堡</div>
+                <div class="rp_list_r"><div class="rp_list_n">3190</div>人读</div>
+            </a>
+            </li>
+        
+    </ul>
+</div>
+
+<%}%>
+<div class='xs-page-bottom'>
+    <div class="xs-promot-place"></div>
+    <div class="xs-bottom">
+      
+        <a class='s-hover xs-bottom-originalPage' id='xsBottomOriginalPage' href="http://www.aszw.com/book/3/3008/" target="_blank">原网页</a> |
+        <a class='s-hover xs-user-feedback' href="http://ifeedback.baidu.com" target="_blank">用户反馈</a> | 
+        <a  class='s-hover xs-bottom-statement' href="http://m.baidu.com/pub/help.php?pn=20&bd_page_type=1" target="_blank">转码声明</a>
+    
+        <div class='xs-promotion'><span class='xs-wx-icon'></span><span>公共号:小说渣渣团</span></div>
+    </div>
+</div>
+</script>
+<script type="text/template" id="toolbarSource">
+    <ul class="list-group">
+        <li class="list-group-item">
+            <div class="box">
+                <div class="box-flex1">
+                    <div class="box">
+                        <% if (isOptimal) { %>
+                        <div class="badge">最佳</div>
+                        <% } %>
+                        <div class="t-sourcetip-name box-flex1"><%= domain %></div>
+                    </div>
+                </div>
+                <button class="button t-sourcetip-btn s-hover">章节报错</button>
+            </div>
+        </li>
+        <% if (loading) { %>
+        <li class="list-group-item">
+            努力加载中~
+        </li>
+        <% } %>
+        <% if (nosource) { %>
+        <li class="list-group-item">
+            没有其他来源呢~
+        </li>
+        <% } %>
+        <% if (!isOptimal && optimalData.url) { %>
+        <li data-action="chapter" class="s-hover list-group-item" data-tag='chapter' data-cid="<%= cid %>"
+            data-path="<%= optimalData.url %>">
+            <div class="box">
+                <div class="badge">最佳</div>
+                <div class="t-sourcetip-name box-flex1"><%= optimalData.domain %></div>
+            </div>
+        </li>
+        <% } %>
+        <% for(var i = 0; i < replacements.length; i++) { %>
+        <% var item = replacements[i] %>
+        <li data-action="chapter" class="s-hover list-group-item" data-path="<%= item.url %>" data-tag='chapter'>
+            <div class="box">
+                <% if (item.isOptimal) { %>
+                <div class="badge" data-tag='chapter'>最佳</div>
+                <% } %>
+                <div class="t-sourcetip-name box-flex1"><%= item.domain %></div>
+            </div>
+        </li>
+        <% } %>
+    </ul>
+</script>
+<script type="text/template" id='XsError'>
+    <div class="xs-chapter xs-error">
+        <div class="xs-chapter-header">
+    <div class="xs-chapter-name">
+        裁决
+    </div>
+</div>
+
+        <div class='xs-error-page'>
+            <div class="xs-error-h1">此章节缺失</div>
+            <div class="xs-content">
+                <div class='xs-error-source'>
+                <div class='xs-error-titlesource'>原因可能是:</div>
+                <div class='xs-statement'>1、来源站删除了这一章</div>
+                <div class='xs-statement'>2、来源站不可访问</div>
+                <div class='xs-button xs-button-source s-hover' data-action='changesource'>换个来源站阅读本章</div>
+                </div>
+                <div class='xs-error-titleerror'>告诉程序员哥哥这里有问题</div>
+                <div class='xs-button s-hover xs-button-error' data-action='chaptererror'>章节报错</div>
+            </div>
+        </div>
+
+        <div class="xs-chapter-paging r-paging">
+            <div class="s-hover ch-paging-pre r-paging-button disable" data-action="chapter">上一章</div>
+            <div class="r-paging-line"></div>
+            <div class="s-hover r-paging-button" data-action="list" id='XsErrorList'>目录</div>
+            <div class="r-paging-line"></div>
+            <div class="s-hover ch-paging-next r-paging-button disable" data-action="chapter">下一章</div>
+        </div>
+    </div>
+        
+<div class="xs-rp">
+    <div class="xs-line-h"></div>
+    <div class="rp_list_title">猜你喜欢<span class='s-hover rp_list_more' data-action='zhidao-tag' pos='chapter-rp'>更多</span></div>
+    <ul class ="rp_list_ul">
+        
+            <li class="rp_list_li">
+            <a class="s-hover" href="./tc?appui=alaxs&srd=1&router=rpdata&gid=3197191974&rporder=0&rpshows=3197191974,3735885596,2653609498,922480590,547288675&original=1703774313&rpsrct=zw">
+                <div class="rp_list_t">星战风暴</div>
+                <div class="rp_list_w ellipsis">骷髅精灵</div>
+                <div class="rp_list_r"><div class="rp_list_n">47027</div>人读</div>
+            </a>
+            </li>
+        
+            <li class="rp_list_li">
+            <a class="s-hover" href="./tc?appui=alaxs&srd=1&router=rpdata&gid=3735885596&rporder=1&rpshows=3197191974,3735885596,2653609498,922480590,547288675&original=1703774313&rpsrct=zw">
+                <div class="rp_list_t">择天记</div>
+                <div class="rp_list_w ellipsis">猫腻</div>
+                <div class="rp_list_r"><div class="rp_list_n">87030</div>人读</div>
+            </a>
+            </li>
+        
+            <li class="rp_list_li">
+            <a class="s-hover" href="./tc?appui=alaxs&srd=1&router=rpdata&gid=2653609498&rporder=2&rpshows=3197191974,3735885596,2653609498,922480590,547288675&original=1703774313&rpsrct=zw">
+                <div class="rp_list_t">永夜君王</div>
+                <div class="rp_list_w ellipsis">烟雨江南</div>
+                <div class="rp_list_r"><div class="rp_list_n">5288</div>人读</div>
+            </a>
+            </li>
+        
+            <li class="rp_list_li">
+            <a class="s-hover" href="./tc?appui=alaxs&srd=1&router=rpdata&gid=922480590&rporder=3&rpshows=3197191974,3735885596,2653609498,922480590,547288675&original=1703774313&rpsrct=zw">
+                <div class="rp_list_t">精灵王</div>
+                <div class="rp_list_w ellipsis">天空骑士</div>
+                <div class="rp_list_r"><div class="rp_list_n">1352</div>人读</div>
+            </a>
+            </li>
+        
+            <li class="rp_list_li">
+            <a class="s-hover" href="./tc?appui=alaxs&srd=1&router=rpdata&gid=547288675&rporder=4&rpshows=3197191974,3735885596,2653609498,922480590,547288675&original=1703774313&rpsrct=zw">
+                <div class="rp_list_t">星河贵族</div>
+                <div class="rp_list_w ellipsis">奥尔良烤鲟鱼堡</div>
+                <div class="rp_list_r"><div class="rp_list_n">3190</div>人读</div>
+            </a>
+            </li>
+        
+    </ul>
+</div>
+    
+        <div class='xs-page-bottom'>
+    <div class="xs-promot-place"></div>
+    <div class="xs-bottom">
+      
+        <a class='s-hover xs-bottom-originalPage' id='xsBottomOriginalPage' href="http://www.aszw.com/book/3/3008/" target="_blank">原网页</a> |
+        <a class='s-hover xs-user-feedback' href="http://ifeedback.baidu.com" target="_blank">用户反馈</a> | 
+        <a  class='s-hover xs-bottom-statement' href="http://m.baidu.com/pub/help.php?pn=20&bd_page_type=1" target="_blank">转码声明</a>
+    
+        <div class='xs-promotion'><span class='xs-wx-icon'></span><span>公共号:小说渣渣团</span></div>
+    </div>
+</div>
+</script>
+
+<script type="text/javascript" src="/Public/xiaoshuo/js/baitong.min.js"></script>
+<script type="text/javascript" src="/Public/xiaoshuo/js/lib.min.0507.js"></script>
+<script type="text/javascript" src="/Public/xiaoshuo/js/novel.min.0821.js"></script>
+<script type="text/javascript" src="/Public/xiaoshuo/js/novelAD.js"></script>
+<script type="text/javascript" src="/Public/xiaoshuo/js/h.js?d2f3f84ebf062c563092593ff0f64d37"></script>
+</body>
+</html>

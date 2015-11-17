@@ -1,0 +1,6 @@
+/Application/Common/Conf/config.php
+/Application/Runtime
+/Uploads
+/Application/Install/install.lock
+/Application/Weixin/Conf/config.php
+.buildpath

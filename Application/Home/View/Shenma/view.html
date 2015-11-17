@@ -1,0 +1,558 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="gb2312">
+<title>{$detail_chapter.title}- {$Detail.title} - 一起php</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href="/Public/shenma/css/201408-novel.css?v=20150805" rel="stylesheet" type="text/css" id="qiehuancss">
+
+<script src="/Public/shenma/js/jquery.js?v=201412209" type="text/javascript"></script>
+<script src="/Public/shenma/js/common.js?v=201412209" type="text/javascript"></script>
+<script src="/Public/shenma/js/global.js?v=201412209" type="text/javascript"></script>
+<script src="/Public/shenma/js/BookRead_my08.js?v=201412209" type="text/javascript"></script>
+<!--登录提示-->
+<style>
+.mothp{color:#414141;background:#fff}.mothp h1{width:96%;height:60px;line-height:60px;padding:0 2%;font-weight:400;font-size:1.7em;color:#414141;border-bottom:2px solid #0065b5}.mothp h1 span{margin-top:12px;width:38px;height:38px;background:url(images/close_03.png) no-repeat;background-size:contain}.cont{margin:3%}.cont p{line-height:30px;font-size:1em}.ml{margin-left:4%}.cont a.btnone{display:inline-block;margin-top:20px;height:46px;color:#fff;text-align:center;font-size:1.25em;text-decoration:none;line-height:46px;border-radius:5px;-webkit-border-radius:5px;-moz-border-radius:5px;background:#0065b5;width:48%}.mothp{color:#414141}.mothp h1{width:96%;height:60px;line-height:60px;padding:0 2%;font-weight:400;font-size:1.7em;color:#414141;border-bottom:2px solid #0065b5}.mothp h1 span{display:inline-block;float:right;margin-top:12px;width:38px;height:38px;background:url(../images/close_03.png) no-repeat;background-size:contain}.cont{margin:3%}.cont p{line-height:30px;font-size:1em}.cont p span.red{color:red}.ml{margin-left:4%}.cont a.btn,.cont a.btn2{display:inline-block;margin:5px 0 25px;height:46px;color:#fff;text-align:center;font-size:1.25em;text-decoration:none;line-height:46px;border-radius:5px;-webkit-border-radius:5px;-moz-border-radius:5px;background:#0065b5;width:100%}.cont a.btn2{background:#fff;border:1px solid #61b7f4;color:#0065b5}
+</style>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?5a477e1c99330cb03ff8c983438b2ed2";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+</head>
+
+<body>
+<script>
+	//判断背景颜色设置 cookie是否保存 如果存在恢复设置
+	var readSetBackground = getCookie("readSetBackground");
+	if (readSetBackground) {
+		if (readSetBackground == 'rbgcloselight') {
+			$("#qiehuancss").attr('href',"/Public/shenma/css/201408-novel-light.css?v=20150805");
+
+		} else if (readSetBackground == 'rbgopenlight') {
+			$("#qiehuancss").attr('href',"/Public/shenma/css/201408-novel.css?v=20150805");
+
+		} else {
+			$("body").removeClass();
+			$("body").addClass(readSetBackground);
+		}
+
+	}
+</script>
+    <a id="top"></a>
+    <div class="helpbox" style="display: none;">
+        <div class="help_top">
+            <span>上翻页区</span>
+        </div>
+        <div class="help_mid">
+            <span>功能呼叫区</span>
+        </div>
+        <div class="help_btm">
+            <span>下翻页区</span>
+        </div>
+    </div>
+    <div class="book_title" style="display: none;">
+        <a href="{:U('info?bookid='.$bookid)}" class="return"><div class="arrows-left">
+                <span class="icon1"><span class="icon2"></span></span>
+            </div></a> <a class="dh_select" id="topDaoHang">导航</a>
+        <!-- href="javascript:toggleTopNavTwo();" -->
+        <div id="topNavBoxTwo" class="catalogbox" style="display: none;">
+            <span class="arrow_up"></span>
+            <div class="catalog">
+                <a href="/">首页</a> <!-- <a href="/usercp.html">个人中心</a> <a href="/Public/shenma/usercp.php?a=bookcase">书架</a> <a href="/Public/shenma/top.php?a=topindex">排行</a> <a href="/Public/shenma/index.php?a=client_download">客户端</a> <a href="/Public/shenma/pay.php?a=zhifubao">充值</a> -->
+            </div>
+            <div class="line"></div>
+        </div>
+        <a class="yuedushezhi" href="javascript:Common.toggleTopNav();">设置</a> <a class="lilight lilighttxet" href="javascript:;">关灯</a>
+        <div id="topNavBox" class="book_c_box" style="display: none;">
+            <span class="arrow_up"></span>
+            <div class="font_zoom">
+                <dl>
+                    <dt>字体设置:</dt>
+                    <dd id="ddminus">
+                        <span>A-</span>
+                    </dd>
+                    <dd id="ddplus">
+                        <span>A+</span>
+                    </dd>
+                </dl>
+            </div>
+            <div class="font_zoom">
+                <div class="line"></div>
+                <dl>
+                    <dt>行距设置:</dt>
+                    <dd id="hang-xiao">
+                        <span>T-</span>
+                    </dd>
+                    <dd id="hang-da">
+                        <span>T+</span>
+                    </dd>
+                </dl>
+            </div>
+            <div class="read_bg">
+                <div class="line"></div>
+                <dl>
+                    <dt>阅读背景:</dt>
+                    <dd id="ddnight" mode="0" class="">
+                        <span class="rbg0"></span>
+                    </dd>
+                    <dd id="ddday" mode="1" class="">
+                        <span class="rbg1"></span>
+                    </dd>
+                    <dd id="ddypj" mode="2" class="selected">
+                        <span class="rbg2"></span>
+                    </dd>
+                    <dd id="ddyumao" mode="3" class="">
+                        <span class="rbg3"></span>
+                    </dd>
+                </dl>
+            </div>
+            <!-- 暂时注释掉 
+    <div class="read_ms">
+        <dl>
+          <dt>翻页模式:</dt>
+          <dd id="ddscroll" class="selected"><span>上下滑动</span></dd>
+          <dd id="ddslide" class=""><span>左右滑动</span></dd> 
+        </dl>
+     </div>
+      -->
+        </div>
+    </div>
+
+    <div id="readercontainer" style="width: auto; height: auto; position: static; z-index: 1; font-size: 17px; line-height: 30px; color: rgb(0, 0, 0);">
+        <div class="chapter">
+            <div id="article">
+                <h3>{$detail_chapter.title}</h3>
+                <!--
+             
+             <script type="text/javascript">BAIDU_CLB_fillSlot("956805");</script> 
+                         -->
+                <div style="height: 10px"></div>
+                {$detail_chapter.content}
+                <div style="height: 30px"></div>
+                <!--  -->
+            </div>
+
+            <!-- 此处下一章、总章数、文章id、url地址提供给js使用 -->
+            <input type="hidden" name="nextpage" value="{$nextpage}"> 
+            <input type="hidden" id="nextpageCache" name="nextpageCache" value="{$nextpage}"> 
+            <input type="hidden" name="totalPage" value="2708"> 
+            <input type="hidden" name="articleId" value="{$bookid}"> 
+            <input type="hidden" name="articleUrl" value="{:U('info?bookid='.$bookid)}">
+            <!-- 为了防止 菜单 盖住广告 增加文档高度 
+  <div style="height:55px"></div>  -->
+        </div>
+    </div>
+    <div class="pop-upblue" style="display: none">
+        <span class="a1star" id="firstspan"></span> 
+        <span class="spantools" style="display: none"> 
+            <a href="#" class="a2">反馈</a> 
+            <a href="#" class="a3">评论</a> 
+            <a href="#" class="a4">打赏</a> 
+            <a href="#" class="a5">月票</a>
+        </span>
+    </div>
+    <div class="hudong" style="display: none;">
+        <a href="#">打赏作者</a><a href="#">投月票</a>
+    </div>
+    <div class="book_readbtm" id="tool_btm" style="display: none;">
+        <ul>
+            <li id="liprev"><a href="{:U('view?bookid='.$bookid.'&index='.$prepage)}">上一章</a></li>
+            <li id="ml"><a href="{:U('newpartlist?bookid='.$bookid)}">目录</a></li>
+            <li><a id="cache_chapter">缓存后5章</a></li>
+            <li id=""><a href="#top">回到顶部</a></li>
+            <li id="linext"><a href="{:U('view?bookid='.$bookid.'&index='.$nextpage)}">下一章</a></li>
+        </ul>
+    </div>
+    <div>
+        <p style="text-align: center; color: #a7a7a7; font-size: 16px; line-height: 30px">学习用, 如有侵权,请告知(QQ:383498892),可删除</p>
+    </div>
+
+    </div>
+
+</body>
+<script>
+	$(function() {
+
+		//导航切换事件
+		$("a#topDaoHang").click(function() {
+			//首先判断导航菜单是否显示,显示则隐藏
+			if ($("div#topNavBoxTwo").is(":visible")) {
+				$("div#topNavBoxTwo").hide();
+			} else {
+				//显示导航菜单之前先隐藏设置菜单
+				if ($("#topNavBox").is(":visible")) {
+					$("#topNavBox").hide();
+				}
+				$("div#topNavBoxTwo").show();
+			}
+		});
+
+		//显示设置菜单时,如果导航菜单显示则先隐藏
+		$("a.yuedushezhi").click(function() {
+			if ($("div#topNavBoxTwo").is(":visible")) {
+				$("div#topNavBoxTwo").hide();
+			}
+		});
+		//页面功能引导区
+		var userReadSet = getCookie("userReadSet");
+		if (!userReadSet) {
+			InitHelpBox();
+			setCookie("userReadSet", 1, 30);
+		}
+
+		//判断背景颜色设置 cookie是否保存 如果存在恢复设置
+		if (readSetBackground) {
+			if (readSetBackground == 'rbgcloselight') {
+				$(".lilighttxet").text('开灯');
+				$("div#readercontainer").css("color", "#666");
+			} else if (readSetBackground == 'rbgopenlight') {
+				$(".lilighttxet").text('关灯');
+				$("div#readercontainer").css("color", "rgb(0, 0, 0)");
+			}
+		}
+
+		//判断文本字体大小设置 cookie是否保存 如果存在恢复设置
+		var readsetfontsize = getCookie("readsetfontsize");
+		if (readsetfontsize) {
+			$("div#readercontainer").css("font-size", readsetfontsize + "px");
+		}
+		//判断文本行间距设置 cookie是否保存 如果存在恢复设置
+		var readsetlineheihgt = getCookie("readsetlineheihgt");
+		if (readsetlineheihgt) {
+			$("div#readercontainer").css("line-height",
+					readsetlineheihgt + "px");
+		}
+		//减小字体
+		$("#ddminus").click(function() {
+			var fontbody = $("div#readercontainer").css("font-size");
+			var fontsize = parseInt(fontbody);
+			if (fontsize > 16) {
+				var newfont = eval(fontsize - 2);
+				$("div#readercontainer").css("font-size", newfont + "px");
+				$("#ddplus").html("<span>A+</span>");
+				var fontbody = $("div#readercontainer").css("font-size");
+				var fontsize = parseInt(fontbody);
+				if (fontsize == 16) {
+					$("#ddminus").html("<span>A</span>");
+				}
+				//添加cookie记录
+				setCookie("readsetfontsize", newfont, 30);
+			}
+		});
+		//增大字体
+		$("#ddplus").click(function() {
+			var fontbody = $("div#readercontainer").css("font-size");
+			var fontsize = parseInt(fontbody);
+			if (fontsize < 28) {
+				var newfont = eval(fontsize + 2);
+				$("div#readercontainer").css("font-size", newfont + "px");
+				$("#ddminus").html("<span>A-</span>");
+				var fontbody = $("div#readercontainer").css("font-size");
+				var fontsize = parseInt(fontbody);
+				if (fontsize == 28) {
+					$("#ddplus").html("<span>A</span>");
+				}
+				//添加cookie记录
+				setCookie("readsetfontsize", newfont, 30);
+			}
+		});
+
+		//行间距设置增大
+		$("#hang-xiao").click(function() {
+			var lineHeight = $("div#readercontainer").css("line-height");
+			var lineHeightNum = parseInt(lineHeight);
+			if (lineHeightNum > 25) {
+				var lineHN = eval(lineHeightNum - 4);
+				$("div#readercontainer").css("line-height", lineHN + "px");
+				$("#hang-da").html("<span>T+</span>");
+				var lineHeight = $("div#readercontainer").css("line-height");
+				var lineHeightNum = parseInt(lineHeight);
+				if (lineHeightNum == 22) {
+					$("#hang-xiao").html("<span>T</span>");
+				}
+				//添加cookie记录
+				setCookie("readsetlineheihgt", lineHN, 30);
+			}
+		});
+		//行间距设置减小
+		$("#hang-da").click(function() {
+			var lineHeight = $("div#readercontainer").css("line-height");
+			var lineHeightNum = parseInt(lineHeight);
+			if (lineHeightNum < 45) {
+				var lineHN = eval(lineHeightNum + 4);
+				$("div#readercontainer").css("line-height", lineHN + "px");
+				$("#hang-xiao").html("<span>T-</span>");
+				var lineHeight = $("div#readercontainer").css("line-height");
+				var lineHeightNum = parseInt(lineHeight);
+				if (lineHeightNum == 46) {
+					$("#hang-da").html("<span>T</span>");
+				}
+				//添加cookie记录
+				setCookie("readsetlineheihgt", lineHN, 30);
+			}
+		});
+		//切换阅读背景颜色
+		$("div.read_bg dl span").each(function(index, element) {
+			$(this).click(function() {
+				//首先去掉其父辈元素所有同辈元素的所有class
+				$(this).parent("dd").siblings().removeClass();
+				//给其父辈本身添加selected类
+				$(this).parent("dd").addClass("selected");
+				//获取其样式
+				var backColorValue = $(this).attr('class');
+				$("body").removeClass();
+				$("body").addClass(backColorValue);
+				//添加cookie记录
+				setCookie("readSetBackground", backColorValue, 30);
+			});
+		});
+
+		//切换关灯效果
+		$("div.book_title a.lilighttxet")
+				.toggle(function() {
+							$("#qiehuancss").attr('href',"/Public/shenma/css/201408-novel-light.css?v=20150805");
+							$("div#readercontainer").css("color", "#666");
+							$(".lilighttxet").text('开灯');
+							//添加cookie记录
+							setCookie("readSetBackground", "rbgcloselight", 30);
+						},
+						function() {$("#qiehuancss").attr('href',"/Public/shenma/css/201408-novel.css?v=20150805");
+							$("div#readercontainer").css("color","rgb(0, 0, 0)");
+							$(".lilighttxet").text('关灯');
+							//添加cookie记录
+							setCookie("readSetBackground", "rbgopenlight", 30);
+						});
+
+		//ajax 处理添加书架
+		$("#add_bookcase").click(function() {
+							alert('不要点我了..功能还没做！');
+							exit;
+							var textContent = $(this).text();
+							if (textContent == '加入书架') {
+								$.ajax({
+											type : "get",
+											url : "/Public/shenma/article.php?a=favorite_by_ajax&articleid=166969&pagenum=" + $("input[name=nextpage]").val(),
+											timeout : 5000,
+											success : function(data, statu) {
+												if (data == 2) {
+													alert("恭喜您,已成功加入书架！");
+												} else if (data == 1) {
+													alert("网络错误，请重新添加！");
+												} else if (data == 3) {
+													alert("书架已满快去整理一下吧！");
+												} else if (data == 0) {
+													//未登录直接去登录
+													window.location.href = "/login.html";
+													return false;
+												}
+												$("#add_bookcase").text('已加书架');
+											},
+											error : function(e, status) {
+												if (status == 'timeout') {
+													alert('请求超时，请检查网络后重试！');
+												} else {
+													alert('网络原因未能添加成功，稍后请重试！');
+												}
+
+											}
+
+										});
+
+								return false;
+							}
+						});
+		//滚动事件
+		$(window).scroll(function() {
+			//关闭功能菜单显示层
+			CloseTools();
+			//窗口滚动条的高度
+			var nowTop = $(window).scrollTop();
+			var scrohi = document.body.scrollHeight;
+			//整个窗口的高度
+			var height = $(window).height();
+			//整个文档的高度
+			var heightAll = $(document).height();
+			if ((heightAll - nowTop - height) < (height + 100)) {
+				getArticleContents();
+			}
+
+		});
+		//页脚功能区 评论 打赏等功能显示效果
+		$("span#firstspan").click(function() {
+			var classname = $(this).attr("class");
+			if (classname == 'a1star') {
+				$(this).attr("class", "a1");
+				$("div.pop-upblue span.spantools").show();
+			} else {
+				$(this).attr("class", "a1star");
+				$("div.pop-upblue span.spantools").hide();
+			}
+		});
+
+	});
+	var loading = false;
+	//加载下一章节内容
+	function getArticleContents() {
+		if (loading) {
+			return 11;
+		}
+		var bookid = {$bookid};
+		var vll = $("input[name=nextpage]").val();
+		loading = true;
+		str = '<div id="aaaa" style=" position:fixed; left:5%; right:5%; bottom:50px; text-align:center;"><span style="color:#fff; font-size:12px; border-radius:5px;-webkit-border-radius:5px;-moz-border-radius:5px; background:#000; opacity:0.7; display:inline-block; padding:10px 12px ;">';
+		str += '正在为您卖力加载，请稍候……</span></div>';
+		$('#article').after(str);
+		if(window.localStorage){
+			var key = bookid + '_'+vll;
+			var content = '';
+			content = localStorage.getItem(key);
+			if(content){
+				$('#aaaa').remove();
+				$('#article').append(content);
+				//保存到续读
+				$.ajax({ 
+                    type: "post", 
+                    url: "{:U('ajax_saveXudu')}", 
+                    data: {"bookid" : bookid, "index" : vll},
+                    dataType: "json", 
+                    success: function (data) { 
+                            $("input#showTime").val(data[0].demoData); 
+                    }, 
+                });
+                loading = false;
+                return true;
+			}
+				
+		}
+		$.ajax({
+			type : "post",
+			url : "{:U('article_by_ajax?bookid='.$bookid)}",
+			data: {index:vll},
+			timeout : 10000,
+			success : function(data, statu) {
+				$('#aaaa').remove();
+				if (data.length < 50) {
+					var jsonMessage = eval("(" + data + ")");
+					if (jsonMessage.codeNum == 10) {
+						//未登录
+						//str ='<div style="position:static;left:0;bottom:0;z-index:9999;color:#FFFFFF;height:60px;width:100%;font-size:18px;background:#61b7f4;line-height:60px" align="center">VIP章节,请<span style="font-size:25px;"><a href="/login.html">登录</a></span>后继续浏览 ！</div>';
+						str = '<div class="mothp"><h1>提示<span></span></h1><div class="cont"><p>后续章节需要登录才可以阅读，马上登录后再来。您还没有账号？马上一键注册。</p><a href="/Public/shenma/login.php?a=register_sj" class="btnone">一键注册</a><a href="/login.html" class="btnone ml">登录</a></div></div>';
+						$('#article').after(str);
+						loading = true;
+						return 10;
+					} else if (jsonMessage.codeNum == 20) {
+						//登录未订阅
+						var nextPage = $("input[name=nextpage]").val();
+						str = '<div style="position:static; left:0; bottom:0;z-index:9999;color:#FFFFFF;height:60px;font-size:18px;width:100%;background:#61b7f4;line-height:60px" align="center">VIP章节,请<span style="font-size:25px;"><a href="/novel/166969/'+nextPage+'.html">订阅</a></span>后继续浏览 ！</div>';
+						$('#article').after(str);
+						loading = true;
+						return 20;
+					} else if (jsonMessage.codeNum == 202) {
+						var nextPage = $("input[name=nextpage]").val();
+						var newUserFirstPay = '<div class="mothp">';
+						newUserFirstPay += '<h1>付费提示<span></span></h1>';
+						newUserFirstPay += '<div class="cont">';
+						newUserFirstPay += '<p><span class="red">以下为收费章节，请<span style="font-size:25px;"><a href="/novel/166969/'+nextPage+'.html">订阅</a></span>后继续浏览！</span></p>';
+						//newUserFirstPay += '<p>手机站首充<span class="red">10元就送300阅读币</span>，充越多，送越多，最高可送充值金额的<span class="red">70%</span>哦!期间充值<span class="red">10</span>元即可享无广告阅读。<a href="/Public/shenma/pay.php?a=pay_rule_detail"><span style="color:blue">查看详情</span></a></p>';
+						newUserFirstPay += '<a href="/Public/shenma/pay.php?a=zhifubao" class="btn">充值</a>';
+
+						$('#article').after(newUserFirstPay);
+						loading = true;
+						return 202;
+					} else if (jsonMessage.codeNum == 30) {
+						//最新章节
+						str = '<div style="position:static;left:0;bottom:0;z-index:9999;color:#FFFFFF;height:60px;width:100%;font-size:18px;background:#61b7f4;line-height:60px" align="center"><a href="/">没有更多内容了，点击跳转</a></div>';
+						$('#article').after(str);
+						loading = true;
+						return 30;
+					}
+				}
+				$('#article').append(data);
+				loading = false;
+
+			},
+			error : function(e, status) {
+				$('#aaaa').remove();
+				str = '<div id="bbbb" style=" position:fixed; left:5%; right:5%; bottom:50px; text-align:center;"><span style="color:#fff; font-size:12px; border-radius:5px;-webkit-border-radius:5px;-moz-border-radius:5px; background:#000; opacity:0.7; display:inline-block; padding:10px 12px ;">';
+				str += '网络异常,请刷新重试!</span></div>';
+				$('#article').after(str);
+				setTimeout(function() {$('#bbbb').remove();}, 3000);
+				loading = false;
+			}
+		});
+	}
+	//缓存章节
+    $("#cache_chapter").click(function() {
+    	$("#cache_chapter").html('正在下载');
+    	var nextPage = parseInt($("input[name=nextpage]").val());
+        var nextCachePage = parseInt($("input[name=nextpageCache]").val()) ;
+        if(window.localStorage){
+        	if(nextPage >= nextCachePage)
+        	    localStorage.clear();
+        }else{
+              alert('This browser does NOT support localStorage');
+              return false;
+        }
+        var num = 5;  //缓存10章
+        cache_chapter(num);
+    });
+function cache_chapter(num){
+	var nextPage = parseInt($("input[name=nextpage]").val());
+	var nextCachePage = parseInt($("#nextpageCache").val()) ;
+	console.log("应该下载章节>>>>" + nextCachePage);
+	//nextCachePage = Math.max(nextPage, nextCachePage);
+	nextCachePage = (nextCachePage >= nextPage) ? nextCachePage : nextPage;  //这样写有bug
+	console.log("准备下载章节>>>>" + nextCachePage);
+	if(nextCachePage > 0){
+		$.ajax({
+	        type : "get",
+	        url : "{:U('ajax_cacheChapter?bookid='.$bookid)}",
+	        data: {num:1, index:nextCachePage},
+	        timeout : 20000,
+	        dataType: "json",
+	        success : function(data, statu) {
+
+	            $.each(data.data, function(name, value) {
+	                localStorage.setItem(name, value);
+	            });
+	            $("#nextpageCache").val(data.nextPage);
+	            $("#cache_chapter").html('已缓存' + (nextCachePage-nextPage+1) + '章');
+	            num --;
+	            
+	            if(num > 0){
+	                setTimeout("cache_chapter("+num+");", 1000);
+	            }else{
+	                alert('缓存完毕');
+	                return true;
+	                //$("#cache_chapter").html('缓存完毕');
+	            }
+	            
+	        },
+	        error : function(e, status) {
+	            if (status == 'timeout') {
+	                alert('请求超时，请检查网络后重试！');
+	                return true;
+	            } else {
+	                alert('网络原因未能添加成功，稍后请重试！');
+	                return true;
+	            }
+
+	        }
+	    });
+		
+	}else{
+		//$("input[name=nextpageCache]").val(0);
+	}
+	
+	
+	
+}
+</script>
+</html>

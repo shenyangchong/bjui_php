@@ -1,0 +1,133 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="gb2312">
+<title>{$Detail.title} - 一起php</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href="/Public/shenma/css/2014-mulu.css?v=20150805" rel="stylesheet" type="text/css">
+<link href="/Public/shenma/css/2014-footer.css?v=20150805" rel="stylesheet" type="text/css">
+<script src="/Public/shenma/js/common.js?v=201412209" type="text/javascript"></script>
+<script src="/Public/shenma/js/jquery.js?v=201412209" type="text/javascript"></script>
+<!-- <script src="/Public/shenma/js/Master.js" type="text/javascript"></script> -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?5a477e1c99330cb03ff8c983438b2ed2";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<style type="text/css">
+.mulu .scorder {
+    height: 43px;
+    line-height: 43px;
+    padding: 0 15px;
+    font-size: 14px;
+    background: #F1F2F4;
+}
+.mulu .scorder p {
+    position: absolute;
+    color: #fb6f1b;
+    width: 32px;
+    right: 7px;
+    height: 40px;
+}
+.mulu .js_catal_now_desc {
+    -webkit-transform: rotate(180deg);
+}
+.mulu .js_catal_now_asc, .js_catal_now_desc {
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAjCAYAAADSQImyAAABOElEQVRYR+1Xu27CMBQ9tsSG1I2/YOxYfgSpGxMLU24yFYkhvt26MyOx8Q906sLXdCRGkUAKjyCntlWMrtfYx+eVxFZIfKjE+UME/HeCkoAk4OnA81fIGDPUWk+rqhpYaxdFUew8TQu6/G4CzDwD8Amgd9x1S0SjoAw8wVoFMPMcwAcAC2AJYALgl4j6zT2ZuX4eYnwT0VtXoJsCGuT31tr3PM9XJ6JEdLbm4QQ0ySulxlmWrWtX2gR0dSz0/Es3T7XZN8knIaAsy1et9Q+AK/JJCDDGvCilvgBsiGhzGXUSFbrXTxEQ+u094jkfJZL5jLYZ9bQCIjXDGda7Qs47RZooAiIZ6wwrCThbFWmidwIPd5yW/0CkqrTBdqnQtgb5y7UvpiZnATFJ+GCLAB/3QqyVBEK46INxAHacoSSQR3oSAAAAAElFTkSuQmCC) no-repeat center;
+    background-size: 27px auto;
+}
+.m-paging {
+    text-align: center;
+    padding: 12px;
+}
+.m-paging a.selected, .m-paging a.selected:hover, .m-paging a.selected:active {
+    box-shadow: none;
+    background-color: #44B035;
+    color: #fff;
+    border-color: #44B035;
+}
+.m-paging a {
+    display: inline-block;
+    margin: 0 3px;
+    height: 22px;
+    line-height: 22px;
+    padding: 3px 12px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    color: #333;
+}
+</style>
+</head>
+<body>
+    <div class="book_title">
+        <a href="javascript:history.go(-1)" class="return">
+            <div class="arrows-left">
+                <span class="icon1" id="article_title"><span class="icon2"></span></span>
+            </div>
+        </a>
+        <h2>目录</h2>
+    </div>
+    <div class="mulu">
+        <div class="scorder">
+                
+            <eq name="orderDirection" value="asc">
+                <a href="{:U('newpartlist?bookid='.$bookid.'&orderDirection=desc')}"><p class="js_orderController js_catal_now_asc"></p></a>
+            <else />
+                <a href="{:U('newpartlist?bookid='.$bookid.'&orderDirection=asc')}"><p class="js_orderController js_catal_now_desc"></p></a>
+            </eq>
+        <span class="js_bookName"><a href="{:U('info?bookid='.$bookid)}">{$Detail.title}</a></span>
+        </div>
+        <ul>
+        <foreach name="page_list" item="item">
+        <li><a class="title" href="{:U('view?bookid='.$bookid.'&index='.$item[index])}">{$item.title}</a></li>
+        </foreach>
+        <div class="m-paging">
+        {$pages}
+        </div>
+        </ul>
+    </div>
+    <div class="footer">
+        <!-- <div class="btmnav">
+            <div class="nav">
+                <a href="javascript:Common.toggleCategory(0);" class="close" id="sort">分类
+                    <div class="arrows-type">
+                        <span class="icon1"><span class="icon2"></span></span>
+                    </div>
+                </a><a href="/usercp.html">个人中心</a><a href="/Public/shenma/usercp.php?a=bookcase">书架</a><a href="/Public/shenma/pay.php?a=zhifubao">充值</a><a href="/Public/shenma/top.php?a=topindex">排行榜</a>
+            </div>
+            <div class="catalogbox" id="catebtm" style="display: none;">
+                <div class="catalog">
+                    <h3>男频小说</h3>
+                    <a href="/ch/3.html">武侠仙侠</a> <a href="/ch/6.html">都市小说</a> <a href="/ch/1.html">奇幻玄幻</a> <a href="/ch/5.html">网游竞技</a> <a href="/ch/7.html">历史军事</a> <a href="/ch/4.html">灵异推理</a>
+                </div>
+                <div class="catalog">
+                    <h3>女频小说</h3>
+                    <a href="/ch/2.html">总裁豪门</a> <a href="/ch/15.html">穿越架空</a> <a href="/ch/8.html">古代言情</a> <a href="/ch/11.html">仙侠魔幻</a> <a href="/ch/16.html">都市青春</a>
+                </div>
+                <div class="catalog">
+                    <h3>校园小说</h3>
+                    <a href="/ch/10.html">青春校园</a> <a href="/ch/14.html">素锦年华</a> <a href="/ch/13.html">魔幻传奇</a> <a href="/ch/9.html">同人小说</a> <a href="/ch/22.html">轻小说</a>
+                </div>
+                <div class="catalog">
+                    <a href="/"><h3>首页</h3></a><a href="http://t.xs.cn/Public/shenma/mobilegame.php?a=center" style="font-size: 12px; olor: #0065b5; padding-right: 1em;"><h3 style="text-align: right;">游戏中心</h3></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer_msg">
+            <a href="" class="blue">炫彩版</a>&nbsp;&nbsp;<a href="http://3g.xs.cn?tpl_style=3g">3G版</a>&nbsp;&nbsp;<a href="http://m.xs.cn?tpl_style=wap">WAP版</a>&nbsp;&nbsp;<a href="/Public/shenma/index.php?a=client_download">客户端</a><br> <a href="/Public/shenma/index.php?a=kefu">联系客服</a>&nbsp;&nbsp;<a href="/shangwu">商务合作</a>&nbsp;&nbsp;<a href="/Public/shenma/index.php?a=help">帮助</a>&nbsp;&nbsp;<a href="/Public/shenma/index.php?a=jianyi">建议</a>
+        </div>
+        <p class="copyright">
+            &copy;2004-2015 <a href="/">xs.cn</a> 京ICP证090166号
+        </p> -->
+        <div class="back2top">
+            <a href="#top">回到顶部</a>
+        </div>
+    </div>
+
+</body>
+</html>

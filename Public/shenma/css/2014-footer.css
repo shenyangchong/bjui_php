@@ -1,0 +1,26 @@
+
+/* µ×²¿µ¼º½ */
+.footer{ margin-bottom:20px; line-height:2.2; position:relative; margin-top:200px;}
+.footer .nav{ border-top:1px solid #81b2da; border-bottom:1px solid #81b2da; line-height:50px; height:50px; margin-bottom:10px; overflow:hidden;width:100%; background:#fff; white-space:nowrap;text-overflow:ellipsis;-o-text-overflow:ellipsis; -moz-binding: url('ellipsis.xml#ellipsis');}
+.footer .nav a{ display:inline-block; width:19.6%; text-align:center; font-size:100%; color:#3b3b3d; position:relative;}
+.footer .nav a.open,.footer .nav a.close{ padding-right:16px; width:18%;}
+.footer .nav a .arrows-type{ position:absolute; left:62%; top:21px; height:8px; width:13px; overflow:hidden;}
+.footer .nav a.open .arrows-type .icon1 { display:block; border-width:8px 8px 0 8px; border-color: #0065b7 transparent transparent transparent; border-style:solid; position:absolute;left:-2px; top:0; width:0; height:0; }
+.footer .nav a.open .arrows-type .icon2 { display:block; border-width:8px 8px 0 8px; border-color: #fff transparent transparent transparent; border-style:solid; position:absolute; left:-8px; top:-11px; width:0; height:0; }
+.footer .nav a.close .arrows-type .icon1 { display:block; border-width:0 8px 8px 8px; border-color: transparent transparent #0065b7 transparent; border-style:solid; position:absolute;left:-2px; top:0; width:0; height:0; }
+.footer .nav a.close .arrows-type .icon2 { display:block; border-width:0 8px 8px 8px; border-color: transparent transparent #fff transparent; border-style:solid; position:absolute; left:-8px; top:3px; width:0; height:0; }
+.footer_msg{ text-align:center; font-size:14px;}
+
+.copyright{ text-align:center; color:#a7a7a7; font-size:12px; }
+
+.btmnav{ position:relative;}
+.catalogbox h3{ font-size:18px; color:#ccc; text-align:left;}
+.btmnav .catalogbox {position:absolute; z-index:3; left:0; bottom:50px; background:rgba(0,0,0,0.8);line-height:30px;text-align:center; font-size:1.0em; width:100%;}
+.btmnav .catalogbox .catalog{ clear:both; *display:inline-block; padding:5px 10px;}
+.btmnav .catalogbox .catalog:after{content:".";display:block;height:0;clear:both;visibility:hidden;}
+.btmnav .catalogbox .catalog a { width:25%; display:block; float:left; color:#ccc; text-align:center;}
+.btmnav .catalogbox .catalog .hover{ color:#fff;}
+
+.back2top{ position: absolute; right:10px; top:58px; cursor: pointer; z-index:10000; opacity:0.6;}
+.back2top a{ display:block; padding-top:30px; font-size:12px;background: url(../images/back2top.png) no-repeat center top;}
+.yanse,.blue{color:#2472ba;}

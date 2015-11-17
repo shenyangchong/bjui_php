@@ -1,0 +1,140 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="gb2312">
+<title>小说阅读网触屏版-免费、言情、校园、玄幻、武侠等手机小说在线阅读</title>
+<meta content="t.xs.cn" name="author">
+<meta content="Copyright &copy;t.xs.cn 版权所有" name="copyright">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+<meta content="yes" name="apple-mobile-web-app-capable" />
+<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+<meta name="format-detection" content="telephone=no" />
+<link href="/Public/shenma/css/base.css?v=20150805" rel="stylesheet" type="text/css">
+<link href="/Public/shenma/css/search-base.css?v=20150805" rel="stylesheet" type="text/css">
+<link href="/Public/shenma/css/2014-nosearch.css?v=20150805" rel="stylesheet" type="text/css">
+<!-- <link href="/Public/shenma/css/2014-footer.css?v=20150805" rel="stylesheet" type="text/css"> -->
+<script src="/Public/shenma/js/jquery.js?v=201412209" type="text/javascript"></script>
+<script src="/Public/shenma/js/common.js?v=201412209" type="text/javascript"></script>
+</head>
+
+<body class="index">
+    <div class="bookinfo">
+        <div class="book_title">
+            <a href="javascript:history.go(-1)" class="return">
+                <div class="arrows-left">
+                    <span class="icon1"><span class="icon2"></span></span>
+                </div>
+            </a>
+            <h2>搜索结果</h2>
+            <a class="dh_select" href="javascript:Common.toggleTopNav();">导航</a>
+            <div id="topNavBox" class="catalogbox" style="display: none;">
+                <span class="arrow_up"></span>
+                <div class="catalog">
+                    <a href="/">首页</a> <a href="/usercp.html">个人中心</a> <a href="/Public/shenma/usercp.php?a=bookcase">书架</a> <a href="/Public/shenma/top.php?a=topindex">排行</a> <a href="/Public/shenma/index.php?a=client_download">客户端</a> <a href="/Public/shenma/pay.php?a=zhifubao">充值</a>
+                </div>
+                <div class="line"></div>
+            </div>
+        </div>
+    </div>
+    <!-- 搜索与阅读记录 -->
+    <!--  <div class="searchbox">
+<form action="/Public/shenma/search.php" method="get" >
+<input name="searchconditions" type="hidden" value="1" />
+<input class="search-input" name="keywords" id="keywords"  type="text" value="超级" placeholder="请输入关键字" >
+<div class="inputclose" style="display:block;" onclick="document.getElementById('keywords').value=''"></div>
+<input class="bton-search" name="search-bton" type="submit" value="搜索" >
+</form>
+</div>-->
+    <div class="zjyd">
+        最近阅读：<a href="/novel/122861/2.html">花心邪尊</a> <a href="/Public/shenma/usercp.php?a=bookcase&xc=zuijin" style='float: right; padding-right: 10px;'>最近10本</a><br />
+    </div>
+
+    <div class="list">
+        <div class="title">
+            <h3>(共搜索到20部作品)</h3>
+        </div>
+        
+        <foreach name="content.list" item="item">
+        <dl class="li1">
+            <a href="{:U('addBook?gid='.$item[book_id])}">
+                <dt>{$item.book_name}</dt>
+                <dd class="pic">
+                    <img src="{$item.logo}">
+                </dd>
+                <dd class="info">
+                    {$item.author} <span><i>1926.05万</i> 人已看过</span>
+                </dd>
+                <dd class="info">{:mb_substr($item[summary], 30)}</dd>
+                <dd class="sort">{$item.category_name}</dd>
+                <dd class="arrows">
+                    <span class="icon1"><span class="icon2"></span></span>
+                </dd>
+            </a>
+        </dl>
+        </foreach>
+
+        <br />
+        <div class="page">
+            {$pages}
+        </div>
+        <div class="page">
+            <form action="/Public/shenma/search.php" method="get">
+                跳至 <input type="text" name="pagenum" format="*N" size="3" /> <input name="searchconditions" type="hidden" value="1" /> <input name="keywords" type="hidden" value="超级" /> 页 <input type="submit" value="GO">
+            </form>
+        </div>
+
+    </div>
+
+    <!-- 公共脚 -->
+    <div class="footer">
+        <div class="btmnav">
+            <div class="nav">
+                <a href="javascript:Common.toggleCategory(0);" class="close" id="sort">分类
+                    <div class="arrows-type">
+                        <span class="icon1"><span class="icon2"></span></span>
+                    </div>
+                </a><a href="/usercp.html">个人中心</a><a href="/Public/shenma/usercp.php?a=bookcase">书架</a><a href="/Public/shenma/pay.php?a=zhifubao">充值</a><a href="/Public/shenma/top.php?a=topindex">排行榜</a>
+            </div>
+            <div class="catalogbox" id="catebtm" style="display: none;">
+                <div class="catalog">
+                    <h3>男频小说</h3>
+                    <a href="/ch/3.html">武侠仙侠</a> <a href="/ch/6.html">都市小说</a> <a href="/ch/1.html">奇幻玄幻</a> <a href="/ch/5.html">网游竞技</a> <a href="/ch/7.html">历史军事</a> <a href="/ch/4.html">灵异推理</a>
+                </div>
+                <div class="catalog">
+                    <h3>女频小说</h3>
+                    <a href="/ch/2.html">总裁豪门</a> <a href="/ch/15.html">穿越架空</a> <a href="/ch/8.html">古代言情</a> <a href="/ch/11.html">仙侠魔幻</a> <a href="/ch/16.html">都市青春</a>
+                </div>
+                <div class="catalog">
+                    <h3>校园小说</h3>
+                    <a href="/ch/10.html">青春校园</a> <a href="/ch/14.html">素锦年华</a> <a href="/ch/13.html">魔幻传奇</a> <a href="/ch/9.html">同人小说</a> <a href="/ch/22.html">轻小说</a>
+                </div>
+                <div class="catalog">
+                    <a href="/"><h3>首页</h3></a><a href="http://t.xs.cn/Public/shenma/mobilegame.php?a=center" style="font-size: 12px; olor: #0065b5; padding-right: 1em;"><h3 style="text-align: right;">游戏中心</h3></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="back2top">
+            <a href="#top">回到顶部</a>
+        </div>
+    </div>
+
+
+    <!--搜索页收集搜索相关信息-->
+    <script type="text/javascript">
+    var rurl="http://stat.xs.cn/";   //请求统计接口URL
+    var p='wap';                             //来自何种端口
+    var searchid='keywords';                 //搜索框INPUT的ID值
+
+    $('a').click(function(){
+        var keyword=$('#'+searchid).attr("value");
+        var url=$(this).attr('href');
+        var requesturl=rurl+'web/search?keyword='+keyword+'&url='+url+'&uid='+0+'&p='+p;
+        $.getJSON(requesturl,function(data){  
+        }); 
+    });
+    
+</script>
+</body>
+</html>

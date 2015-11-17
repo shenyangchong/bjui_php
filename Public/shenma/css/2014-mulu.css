@@ -1,0 +1,40 @@
+@charset "gb2312";
+/* CSS Document */
+
+body { background:#FFF; font-size:16px; -webkit-text-size-adjust:none; }
+body, ul, ol, li, dl, dt, dd, p, h1, h2, h3, h4, h5, h6, blockquote { margin:0; padding:0; list-style:none; }
+a { text-decoration:none; color:#666; }
+img { border:0; }
+.clear { clear:both; }
+/*基本按钮*/
+.btn-grey { border:0;border-radius:3px;-webkit-border-radius:3px;-moz-border-radius:3px;background:#e5e5e5; color:#fff;}
+
+/* 箭头 */
+
+.arrows-left .icon1 { display:block; border-width:8px 8px 8px 0; border-color:transparent #0065b7 transparent transparent; border-style:solid; position:absolute;left:0; top:-2px; width:0; height:0; }
+.arrows-left .icon2 { display:block; border-width:8px 8px 8px 0; border-color:transparent #fff transparent transparent; border-style:solid; position:absolute; left:3px; top:-8px; width:0; height:0; }
+
+
+/* 标题 */
+.book_title .catalogbox .catalog:after { content:"."; display:block; height:0; clear:both; visibility:hidden; }
+.book_title { position:fixed; top:0; left:0; right:0; z-index:10; height:45px; padding:0 10px; background:#fff; border-bottom:2px solid #0065b5; }
+.return { border-radius:16px; -webkit-border-radius:16px; -moz-border-radius:16px; background:#fff; border:2px solid #0065b5; position:absolute; display:block; width:28px; height:28px; top:7px; left:10px; }
+.book_title .arrows-left { position:absolute;left:8px; top:8px; overflow:hidden; width:8px; height:12px;}
+.book_title h2 { position:absolute; left:84px; right:95px; height:45px; line-height:45px; font-weight:normal; overflow:hidden; color:#3a3b3d; text-align:center; font-size:1.0em; text-overflow: ellipsis; white-space: nowrap; }
+
+/* 目录 */
+.mulu{margin:50px 0 10px; position:relative; z-index:1}
+.mulu ul{ margin:0 5px;}
+.mulu li{ border-bottom:1px solid #ccc; padding-left:10px; line-height:36px; height:36px; font-size:0.9em; position:relative;}
+.mulu li a.title{ position:absolute; display:block; left:0; right:40px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;-o-text-overflow:ellipsis; -moz-binding: url('ellipsis.xml#ellipsis');}
+.mulu .sort{border-radius:3px; -webkit-border-radius:3px; -moz-border-radius:3px; background:#fff; position:absolute; display:block; padding:0 5px;height:20px; top:8px; right:5px; line-height:20px; text-align:center; font-size:12px; border:1px solid #ddd;}
+.mulu .mianfei{ color:#999;}
+.mulu .vip,.mulu .vip a{color:#ff4800; font-size:16px;}
+.mulu .baoyue{ color:#f00;}
+.mulu .vip-ok{ color:#00b509; border:1px solid #00b509;}
+.mulu .bon .btn-grey{ display:block; margin:10px auto 0; text-align:center;width:90%; height:30px; line-height:30px; font-size:12px; color:#6e6e6e;}
+
+.back2top{ display:none; width: 35px; height: 35px; background-image: url(../images/back2top.png); position: fixed; right: 10px; bottom: 70px; cursor: pointer; z-index: 10000; opacity: 0.6;}
+
+
+.blue,a.blue{ color:#0065b5;}

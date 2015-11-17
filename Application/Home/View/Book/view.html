@@ -1,0 +1,195 @@
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+<head>
+<meta charset="UTF-8">
+<title>{$Detail.title} - 一起php</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<link rel="shortcut icon" href="/favicon.ico">
+<meta name="description" content="{$Detail.summary}" />
+<meta name="keywords" content="" />
+<link rel="stylesheet" href="/Public/book/css/style.css?v=20150824007">
+<link rel="stylesheet" href="/Public/book/css/kancloud.min.css?v=20150824007">
+<script>
+	(function(H) {
+		H.className = H.className.replace(/\bno-js\b/, 'js')
+	})(document.documentElement)
+</script>
+</head>
+<body>
+    <!--[if lt IE 8]>
+<div class="m-browsehappy">
+    <div class="browsehappy-inner">
+        <h3 class="title">对不起！<br>您的浏览器版本太低，请升级你的浏览器</h3>
+
+        <p class="suggest">建议使用：</p>
+
+        <p class="brower">
+            <span class="item">
+                <a class="ie image" href="http://www.microsoft.com/library/errorpages/smarterror.aspx" target="_blank" title="下载Internet Explorer浏览器"></a>
+                <b class="text">ie9+</b>
+            </span>
+            <span class="item">
+                <a class="chrome image" href="http://www.google.cn/intl/zh-CN/chrome/browser/?spm=1.7274553.0.0.benzR1" target="_blank" title="下载Chrome浏览器"></a>
+                <b class="text">chrome</b>
+            </span>
+        </p>
+
+        <p class="from">--来自看云官方</p>
+        <b class="browsehappy-arrow"></b>
+    </div>
+</div>
+<script>
+    window.nonsupportIE = true;
+</script>
+<![endif]-->
+
+    <div class="m-manual manual-reader" data-id="{$bookid}" data-title="{$Detail.title}" data-desc="{$Detail.summary}" data-basepath="{:C('SITE_URL')}" data-current-article-id="{$detail_chapter.id}">
+        <div class="manual-head">
+            <div class="left">
+                <a class="manual-title" href="{:U('Book/info?bookid='.$bookid)}" title="返回文档首页"> <b class="text">{$Detail.title}</b>
+                </a>
+            </div>
+            <div style="display: none;">
+                <img src="{$Detail.thumb}" />
+            </div>
+        </div>
+        <div class="manual-body">
+            <div class="manual-left">
+                <div class="manual-tab">
+                    <div class="tab-navg">
+                        <span data-mode="view" class="navg-item active"><i class="icon icon-menu"></i><b class="text">目录</b></span> <span data-mode="search" class="navg-item"><i class="icon icon-search"></i><b class="text">搜索</b></span>
+                    </div>
+                    <div class="tab-util">
+                        <span class="manual-fullscreen-switch"> <b class="open icon-chevron-right" title="展开"></b> <b class="close icon-chevron-left" title="关闭"></b>
+                        </span>
+                    </div>
+                    <div class="tab-wrap">
+                        <div class="tab-item manual-catalog">
+                            <div class="catalog-list">
+                                <foreach name="chapter_list" item="item">
+                                <a href="{:U('Book/view?bookid='.$bookid.'&id='.$item[id])}" data-pid="0" data-id="{$item.id}">{$item.title}</a>
+                                </foreach>
+                            </div>
+                        </div>
+                        <div class="tab-item manual-search">
+                            <div class="search-inner">
+                                <div class="search-form">
+                                    <form class="w-search" onsubmit="return false;" method="post" autocomplete="off">
+                                        <label class="w-text text-m text-full search-enter"><input class="text-input" type="text" name="keyword" placeholder="请输入搜索关键词..."></label> <input type="hidden" name="bookid" value="{$bookid}">
+                                        <button class="search-btn icon-search" type="submit"></button>
+                                    </form>
+                                </div>
+                                <div class="search-result"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="m-copyright">
+                    <p>
+                        <a href="http://www.yiqiphp.tk/" target="_blank">一起PHP</a>
+                    </p>
+                </div>
+            </div>
+            <div class="manual-right">
+                <div class="m-article">
+                    <div class="article-head">
+                        <div class="head-tool">
+                            <div class="item font-setting w-drop drop-hover">
+                                <span class="drop-show"><i class="icon icon-font"></i><b class="text">字体</b></span>
+                                <div class="drop-hide drop-hide-left">
+                                    <b class="drop-arrow-outer"><i class="drop-arrow-inner"></i></b>
+
+                                    <div class="drop-hide-inner">
+                                        <div class="buttons size-list">
+                                            <button type="button" id="reduce-font-size" class="button size-2">A</button>
+                                            <button type="button" id="enlarge-font-size" class="button size-2">A</button>
+                                        </div>
+                                        <div class="buttons theme-list">
+                                            <button type="button" id="color-theme-preview-0" class="button size-3" data-theme="0">默认</button>
+                                            <button type="button" id="color-theme-preview-1" class="button size-3" data-theme="1">护眼</button>
+                                            <button type="button" id="color-theme-preview-2" class="button size-3" data-theme="2">夜间</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="head-util"></div>
+                        <h1></h1>
+                    </div>
+                    <div class="article-wrap">
+                        <div class="article-view">
+                            <div class="view-body think-editor-content">
+                                {$detail_chapter.content}
+                            </div>
+                            <div class="view-foot">
+                                <div class="article-jump">
+                                    <span class="jump-up">上一篇：<a></a></span> <span class="jump-down">下一篇：<a></a></span>
+                                </div>
+                                <a class="view-backtop"><i class="icon-arrow-up2"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="think-loading loading-gear loading-active">
+        <span class="loading-inner"> <i class="loading-image">&nbsp;</i> <b class="loading-text">页面正在加载中</b>
+        </span>
+    </div>
+    <script src="/Public/book/js/sea.js"></script>
+<script>
+seajs.config({
+    base   : "/Public/book/",
+    paths  : {
+        'home'     : 'home/script',
+        'common'   : 'common/script',
+        'document' : 'document/script',
+        'component': 'component'
+    },
+    preload: [
+        'component/jquery'
+    ],
+    alias  : {
+        'config': 'common/module/config'
+    },
+    map    : [
+        [/^(.*\.(?:css|js))(.*)$/i, '$1?v=20150824007']
+    ],
+    debug  : true
+});
+</script>
+    <script src="/Public/book/js/app.min.js?v=20150824007"></script>
+    <script src="/Public/book/js/kancloud.min.js?v=20150824007"></script>
+<script>
+seajs.use('config', function (config) {
+    //设置项目配置
+    config.set({
+        "ROOT"  : "", //当前网站地址
+        "APP"   : "", //当前项目地址
+        "STATIC": "/Public/book/", //静态资源文件地址
+        "PUBLIC": "/Public/book/" //home目录地址
+    });
+    seajs.use('home/globle', function () {
+        //启动页面脚本
+        seajs.use('document/kancloud', function (kancloud) {
+            kancloud.start({
+            	"comment":false,"collect":true,"cover":"{$Detail.thumb}","sharing":true,"login":true
+        	});
+        });
+
+    });
+});
+</script>
+</body>
+</html>
